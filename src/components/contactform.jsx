@@ -6,6 +6,7 @@ function ContactForm() {
   const [email, setEmail] = useState('');
   const [date, setDate] = useState('');
   const [message, setMessage] = useState('');
+  const [Service, setService] = useState('');
   const [status, setStatus] = useState('');
 
   const handleSubmit = async (event) => {
@@ -25,6 +26,7 @@ function ContactForm() {
         setStatus('Thanks for your message!');
         setName('');
         setEmail('');
+        setService('');
         setDate('');
         setMessage('');
       } else {
@@ -47,7 +49,7 @@ function ContactForm() {
       >
         <input type="hidden" name="form-name" value="contact" />
         <div>
-          <label htmlFor="name">Name</label> <br/>
+          <label htmlFor="name">Name</label> <br />
           <input
             type="text"
             id="name"
@@ -69,13 +71,30 @@ function ContactForm() {
           />
         </div>
         <div>
+          <label htmlFor="Service">Service</label> <br />
+          <select
+            id="Service"
+            name="Service"
+            value={Service}
+            onChange={(e) => setService(e.target.value)}
+            required
+          >
+            <option value="" disabled>Select a service</option>
+            <option value="Service1">Service 1</option>
+            <option value="Service2">Service 2</option>
+            <option value="Service3">Service 3</option>
+            {/* Add more options as needed */}
+          </select>
+        </div>
+
+        <div>
           <label htmlFor="message">Message (optional) </label> <br />
           <textarea
             id="message"
             name="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            
+
           />
         </div>
         <div>
