@@ -20,33 +20,33 @@ function App() {
   return (
 
     <Router>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/"><img className='logo' src={logo} alt="" /></a>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <a className="navbar-brand" href="/"><img className='logo' src={logo} alt="" /></a>
 
 
 
         <div id="menuToggle" className='p-5' type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <input id="checkbox" type="checkbox" />
-          <label class="toggle" for="checkbox">
-            <div class="bar bar--top"></div>
-            <div class="bar bar--middle"></div>
-            <div class="bar bar--bottom"></div>
+          <label className="toggle" for="checkbox">
+            <div className="bar bar--top"></div>
+            <div className="bar bar--middle"></div>
+            <div className="bar bar--bottom"></div>
           </label>
         </div>
 
-        <div class="collapse navbar-collapse justify-content-lg-end p-5" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <Link class="nav-link" to="/">Home <span class="sr-only">(current)</span></Link>
+        <div className="collapse navbar-collapse justify-content-lg-end p-5" id="navbarSupportedContent">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">Home <span class="sr-only">(current)</span></Link>
+            </li>
+            <li classname="nav-item">
+              <Link className="nav-link" to="/about">About</Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" to="/about">About</Link>
+              <Link className="nav-link" to="/services">Services</Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" to="/services">Services</Link>
-            </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/book">Book An Appointment</Link>
+              <Link className="nav-link" to="/book">Book An Appointment</Link>
             </li>
 
           </ul>
