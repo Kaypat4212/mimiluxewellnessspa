@@ -43,10 +43,15 @@ function App() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="/"><img className='logo' src={logo} alt="" /></a>
 
-        <button id="menuToggle" className='navbar-toggler' type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
+          <div id="menuToggle" className='p-5' type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <input id="checkbox" type="checkbox" />
+          <label className="toggle" for="checkbox">
+            <div className="bar bar--top"></div>
+            <div className="bar bar--middle"></div>
+            <div className="bar bar--bottom"></div>
+          </label>
+        </div>
+        
         <div className="collapse navbar-collapse justify-content-lg-end p-5" id="navbarSupportedContent" ref={navbarCollapseRef}>
           <ul className="navbar-nav">
             <li className="nav-item">
