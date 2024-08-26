@@ -10,6 +10,7 @@ import './components/styles/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './components/images/logo.jpg'
 import './components/styles/style.css'
+import { Link } from 'react-router-dom';
 import './components/styles/whatsappbutton.css'
 import WhatsAppButton from './components/whatsappbutton'; // Import the WhatsAppButton component
 function App() {
@@ -33,16 +34,16 @@ function App() {
         <div class="collapse navbar-collapse justify-content-lg-end p-5" id="navbarSupportedContent">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              <Link class="nav-link" to="/">Home <span class="sr-only">(current)</span></Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about">About</a>
+              <Link class="nav-link" to="/about">About</Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/services">Services</a>
+              <Link class="nav-link" to="/services">Services</Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/book">Book An Appointment</a>
+              <Link class="nav-link" to="/book">Book An Appointment</Link>
             </li>
 
           </ul>
