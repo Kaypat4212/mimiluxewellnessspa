@@ -6,6 +6,7 @@ import About from './components/about';
 import Booking from './components/booking';
 import Footer from './components/footer';
 import Services from './components/services';
+import './components/styles/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import logo from './components/images/logo.jpg';
