@@ -41,6 +41,7 @@ function ContactForm() {
         className="form text-center"
         name="contact"
         method="POST"
+        netlify
         data-netlify="true"
         onSubmit={handleSubmit}
       >
