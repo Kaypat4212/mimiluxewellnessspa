@@ -1,4 +1,5 @@
 import './App.css';
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/home';
@@ -8,6 +9,8 @@ import Footer from './components/footer';
 import Services from './components/services';
 import './components/styles/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 import logo from './components/images/logo.jpg'
 import './components/styles/style.css'
 import { Link } from 'react-router-dom';
