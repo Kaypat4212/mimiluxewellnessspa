@@ -38,16 +38,15 @@ function ContactForm() {
   return (
     <div>
       <form
-        className='form text-center'
+        className="form text-center"
         name="contact"
         method="POST"
-        netlify
-        onSubmit={handleSubmit}
         data-netlify="true"
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
         <div>
-          <label htmlFor="name">Name</label> <br/>
+          <label htmlFor="name">Name</label> <br />
           <input
             type="text"
             id="name"
@@ -69,13 +68,12 @@ function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="message">Message (optional) </label> <br />
+          <label htmlFor="message">Message (optional)</label> <br />
           <textarea
             id="message"
             name="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            
           />
         </div>
         <div>
@@ -89,7 +87,7 @@ function ContactForm() {
             required
           />
         </div>
-        <button className='button' type="submit">Book Now</button>
+        <button className="button" type="submit">Book Now</button>
       </form>
       {status && <p>{status}</p>}
     </div>
