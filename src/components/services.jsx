@@ -65,9 +65,12 @@ const services = [
     imageUrl: myofascialImg
   },
   {
-    title: "Thai Massage",
-    description: "An ancient massage technique that combines acupressure, Indian Ayurvedic principles, and assisted yoga postures to improve flexibility and balance energy.",
-    imageUrl: thaiImg
+  title: "Thai Massage",
+  description: "An ancient massage technique that combines acupressure, Indian Ayurvedic principles, and assisted yoga postures to improve flexibility and balance energy.",
+  imageUrl: thaiImg,
+  button: {
+    label: "Book Now",
+    url: "https://example.com/book-thai-massage"
   },
 ];
 
@@ -85,7 +88,10 @@ const Services = () => {
               <Card.Img variant="top" className='cardimg' src={service.imageUrl} alt={service.title} />
               <Card.Body>
                 <Card.Title>{service.title}</Card.Title>
-                <Card.Text>{service.description}</Card.Text>
+                <Card.Text>{service.description}</Card.  
+                  <a href={button.url}>
+    <button>{button.label}</button>
+  </a>
               </Card.Body>
             </Card>
           </Col>
