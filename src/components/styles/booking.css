@@ -1,0 +1,16 @@
+.headerr{
+    height: 100vh;
+}
+
+.headerr > h2{
+    text-align: center;
+    color: white;
+}
+
+/* .headerr{
+    background: rgb(255, 97, 194);
+} */
+
+p{
+    text-align: center;
+}

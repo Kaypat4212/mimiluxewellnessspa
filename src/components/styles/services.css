@@ -1,0 +1,39 @@
+/* Services page specific styles */
+.services-page {
+    padding: 50px 0;
+  }
+  
+  .services-page h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif; /* Example serif font */
+  }
+  
+  .services-page p {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+  }
+  
+  .card {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .card-img-top {
+    height: 250px; /* Adjust based on your images */
+
+ 
+  }
+  
+  .card-title {
+    font-size: 15px;
+    text-align: center;
+    font-weight: 800;
+  }
+  
+  .card-text {
+    font-size: 10px;
+    text-align: start;
+    color: #000000; /* Adjust color based on theme */
+  }
+  

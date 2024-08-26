@@ -1,0 +1,25 @@
+.form{
+    background-color: pink;
+    width: 400px;
+    margin: auto;
+    border-radius: 20px;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    margin-bottom: 170px;
+}
+
+textarea{
+  border-radius: 5px;
+  border: none;
+}
+
+input{
+  border-radius: 5px;
+  border: none;
+}
+
+@media (max-width:500px) {
+  .form{
+    width: 300px;
+  }
+}
