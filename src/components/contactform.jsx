@@ -1,6 +1,8 @@
 // src/components/ContactForm.js
 import React, { useState } from 'react';
 import './styles/contactform.css'
+
+
 function ContactForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -23,7 +25,7 @@ function ContactForm() {
       });
 
       if (response.ok) {
-        setStatus('Thanks for your message!');
+        setStatus('Appointment successfully booked! Proceed to make payment.');
         setName('');
         setEmail('');
         setService('');
@@ -39,7 +41,10 @@ function ContactForm() {
 
   return (
     <div>
+     
+      
       <form
+    
         className='form text-center'
         name="contact"
         method="POST"
@@ -47,7 +52,10 @@ function ContactForm() {
         onSubmit={handleSubmit}
         data-netlify="true"
       >
+       {/* Display status message here */}
+       {status && <p className="status-message">{status}</p>}
         <input type="hidden" name="form-name" value="contact" />
+        
         <div>
           <label htmlFor="name">Name</label> <br />
           <input
@@ -89,13 +97,12 @@ function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="message">Message (optional) </label> <br />
+          <label htmlFor="message">Message (optional)</label> <br />
           <textarea
             id="message"
             name="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-
           />
         </div>
         <div>
@@ -111,9 +118,9 @@ function ContactForm() {
         </div>
         <button className='button' type="submit">Book Now</button>
       </form>
-      {status && <p>{status}</p>}
     </div>
   );
 }
 
 export default ContactForm;
+

@@ -2,6 +2,10 @@
     height: 100vh;
 }
 
+.status-message{
+    font-size: 13px;
+}
+
 .headerr > h2{
     text-align: center;
     color: white;

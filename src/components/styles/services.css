@@ -4,7 +4,8 @@
   }
   
   .services-page h2 {
-    color: white;
+    color: rgb(255, 255, 255);
+    font-weight: 800;
     margin-bottom: 20px;
     font-family: 'Georgia', serif; /* Example serif font */
   }
@@ -15,8 +16,9 @@
   }
   
   .card {
-    border-radius: 10px;
     overflow: hidden;
+    border: none;
+
   }
   
   .card-img-top {
@@ -24,9 +26,15 @@
 
  
   }
+
+  .card-body{
+    background-color: rgb(153, 27, 119);
+  }
   
   .card-title {
     font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+
     text-align: center;
     font-weight: 800;
   }
@@ -34,6 +42,7 @@
   .card-text {
     font-size: 10px;
     text-align: start;
-    color: #000000; /* Adjust color based on theme */
+    font-family: 'Georgia', serif; /* Example serif font */
+    color: #ffffff; /* Adjust color based on theme */
   }
   
