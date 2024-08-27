@@ -1,73 +1,35 @@
-// src/components/ContactForm.js
-import React, { useState } from 'react';
-import './styles/contactform.css';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
-function ContactForm() {
-  const [status, setStatus] = useState('');
+export const ContactUs = () => {
+  const form = useRef();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setStatus('Submitting...');
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-    // Simulate a form submission delay
-    setTimeout(() => {
-      setStatus('Form submitted successfully!');
-      // Redirect after a short delay
-      setTimeout(() => {
-        window.location.href = '/thank-you'; // Redirect to a thank you page
-      }, 1000); // Delay before redirect
-    }, 1000); // Simulated form submission delay
+    emailjs
+      .sendForm('service_nchnt1zD', 'YOUR_TEMPLATE_ID', form.current, {
+        publicKey: 'xtbDsVcaE4dyXkSZq',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
   };
 
   return (
-    <div>
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
-      >
-        <input type="hidden" name="form-name" value="contact" />
-
-        {/* Hidden field for bot prevention */}
-        <div style={{ display: 'none' }}>
-          <label>
-            Don’t fill this out if you’re human:
-            <input name="bot-field" />
-          </label>
-        </div>
-
-        {/* Input field for name */}
-        <div>
-          <label htmlFor="name">Name</label> <br />
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-          />
-        </div>
-
-        {/* Input field for email */}
-        <div>
-          <label htmlFor="email">Email</label> <br />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-          />
-        </div>
-
-        {/* Submit button */}
-        <button type="submit">Submit</button>
-
-        {/* Status message */}
-        {status && <p className="status-message">{status}</p>}
-      </form>
-    </div>
-  );
-}
-
-export default ContactForm;
+    <form ref={form} onSubmit={sendEmail}>
+      <label>Name</label>
+      <input type="text" name="user_name" />
+      <label>Email</label>
+      <input type="email" name="user_email" />
+      <label>Message</label>
+      <textarea name="message" />
+      <input type="submit" value="Send" />
+    </form>
+      );
+    };
