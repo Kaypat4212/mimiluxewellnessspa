@@ -3,23 +3,23 @@ import React, { useState } from 'react';
 import './styles/contactform.css';
 
 function ContactForm() {
-  const [status, setStatus] = useState('');
+  // const [status, setStatus] = useState('');
 
-  // Handle form submission
-  const handleSubmit = (event) => {
-    // Netlify handles the submission, so we just handle the status
-    event.preventDefault();
-    setStatus('Submitting...');
+  // // Handle form submission
+  // const handleSubmit = (event) => {
+  //   // Netlify handles the submission, so we just handle the status
+  //   event.preventDefault();
+  //   setStatus('Submitting...');
 
-    // After a delay (for demo purposes), you can set status to success
-    setTimeout(() => {
-      setStatus('Form submitted successfully! Redirecting...');
-      // Redirect after form submission
-      setTimeout(() => {
-        window.location.href = '/thank-you'; // Redirect to a thank you page
-      }, 1000); // Redirect delay
-    }, 1000); // Simulate form submission delay
-  };
+  //   // After a delay (for demo purposes), you can set status to success
+  //   setTimeout(() => {
+  //     setStatus('Form submitted successfully! Redirecting...');
+  //     // Redirect after form submission
+  //     setTimeout(() => {
+  //       window.location.href = '/thank-you'; // Redirect to a thank you page
+  //     }, 1000); // Redirect delay
+  //   }, 1000); // Simulate form submission delay
+  // };
 
   return (
     <div>
@@ -28,10 +28,10 @@ function ContactForm() {
         name="contact"
         method="POST"
         data-netlify="true"
-        onSubmit={handleSubmit} // Handle the form submission
+        // onSubmit={handleSubmit} // Handle the form submission
       >
         {/* Display status message here */}
-        {status && <p className="status-message">{status}</p>}
+        {/* {status && <p className="status-message">{status}</p>} */}
         <input type="hidden" name="form-name" value="contact" />
 
         <div>
