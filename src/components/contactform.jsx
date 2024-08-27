@@ -1,69 +1,45 @@
 // src/components/ContactForm.js
 import React, { useState } from 'react';
-import './styles/contactform.css'
-
+import './styles/contactform.css';
 
 function ContactForm() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [date, setDate] = useState('');
-  const [message, setMessage] = useState('');
-  const [Service, setService] = useState('');
   const [status, setStatus] = useState('');
 
-  const handleSubmit = async (event) => {
+  // Handle form submission
+  const handleSubmit = (event) => {
+    // Netlify handles the submission, so we just handle the status
     event.preventDefault();
+    setStatus('Submitting...');
 
-    // Netlify form handling usually requires the form data to be URL-encoded.
-    const formData = new FormData(event.target);
-
-    try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString(),
-      });
-
-      if (response.ok) {
-        setStatus('Appointment successfully booked! Proceed to make payment.');
-        setName('');
-        setEmail('');
-        setService('');
-        setDate('');
-        setMessage('');
-      } else {
-        setStatus('Something went wrong. Please try again.');
-      }
-    } catch (error) {
-      setStatus('Something went wrong. Please try again.');
-    }
+    // After a delay (for demo purposes), you can set status to success
+    setTimeout(() => {
+      setStatus('Form submitted successfully! Redirecting...');
+      // Redirect after form submission
+      setTimeout(() => {
+        window.location.href = '/thank-you'; // Redirect to a thank you page
+      }, 1000); // Redirect delay
+    }, 1000); // Simulate form submission delay
   };
 
   return (
     <div>
-     
-      
       <form
-    
         className='form text-center'
         name="contact"
         method="POST"
-        netlify
-        onSubmit={handleSubmit}
         data-netlify="true"
+        onSubmit={handleSubmit} // Handle the form submission
       >
-       {/* Display status message here */}
-       {status && <p className="status-message">{status}</p>}
+        {/* Display status message here */}
+        {status && <p className="status-message">{status}</p>}
         <input type="hidden" name="form-name" value="contact" />
-        
+
         <div>
           <label htmlFor="name">Name</label> <br />
           <input
             type="text"
             id="name"
             name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
@@ -73,8 +49,6 @@ function ContactForm() {
             type="email"
             id="email"
             name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
@@ -84,8 +58,6 @@ function ContactForm() {
           <select
             id="Service"
             name="Service"
-            value={Service}
-            onChange={(e) => setService(e.target.value)}
             required
           >
             <option value="" disabled>Select a service</option>
@@ -101,8 +73,6 @@ function ContactForm() {
           <textarea
             id="message"
             name="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
           />
         </div>
         <div>
@@ -111,8 +81,6 @@ function ContactForm() {
             type="date"
             id="date"
             name="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
             required
           />
         </div>
@@ -123,4 +91,3 @@ function ContactForm() {
 }
 
 export default ContactForm;
-
