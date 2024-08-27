@@ -3,47 +3,20 @@ import React, { useState } from 'react';
 import './styles/contactform.css';
 
 function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-  });
   const [status, setStatus] = useState('');
 
-  // Handle input changes
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
     setStatus('Submitting...');
 
-    // Prepare form data
-    const data = new FormData(event.target);
-
-    // Submit form to Netlify
-    fetch('/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams(data).toString(),
-    })
-      .then(() => {
-        setStatus('Form submitted successfully!');
-        setFormData({
-          name: '',
-          email: '',
-        });
-      })
-      .catch(() => {
-        setStatus('Submission failed. Please try again.');
-      });
+    // Simulate a form submission delay
+    setTimeout(() => {
+      setStatus('Form submitted successfully!');
+      // Redirect after a short delay
+      setTimeout(() => {
+        window.location.href = '/thank-you'; // Redirect to a thank you page
+      }, 1000); // Delay before redirect
+    }, 1000); // Simulated form submission delay
   };
 
   return (
@@ -72,8 +45,6 @@ function ContactForm() {
             type="text"
             id="name"
             name="name"
-            value={formData.name}
-            onChange={handleChange}
             required
           />
         </div>
@@ -85,8 +56,6 @@ function ContactForm() {
             type="email"
             id="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
             required
           />
         </div>
