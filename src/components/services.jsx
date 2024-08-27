@@ -32,7 +32,7 @@ const services = [
     imageUrl: faceMassageImg,
     button: {
       label: "Book Now",
-      url: "https://example.com/book-thai-massage"
+      url: "/book"
     },
   },
   {
