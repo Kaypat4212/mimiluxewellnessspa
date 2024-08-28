@@ -4,23 +4,27 @@ import './styles/contactform.css';
 function ContactForm() {
   return (
     <div className='body'>
-      <form name="appointmentform" className='form' method="POST" netlify>
-  <p>
-    <label>Your Name: </label>
+      <form name="contact" className='form' method="POST" netlify>
+
+    <label>Your Name: </label> <br/>
     <input type="text" name="name" />
-  </p>
-  <p>
-    <label>Your Email: </label>
+
+  <br/>
+
+    <label>Your Email: </label> <br/>
     <input type="email" name="email" />
-  </p>
-  <p>
-    <label>Phone number:</label>
+  
+  <br/>
+
+    <label>Phone number:</label> <br/>
     <input type="tel" name="phone-number" />
-  </p>
-  <p>
+  
+  <br/>
+
     <label>Service: 
     </label>
-    <select name="service[]" multiple>
+    <select className='select' name="service">
+      <option value="Select">Select one</option>
       <option value="DeepTissueMassage">Deep Tissue Massage</option>
       <option value="FaceMassage">Face Massage</option>
       <option value="ReflexologyMassage">Reflexology Massage</option>
@@ -32,13 +36,13 @@ function ContactForm() {
       <option value="MyofascialReleaseMassage">Myofascial Release Massage</option>
       <option value="ThaiMassage">Thai Massage</option>
     </select>
-  </p>
-  <p>
+  
+
     <label>Message: <textarea name="message"></textarea></label>
-  </p>
-  <p>
+  <br/>
+
     <button type="submit">Send</button>
-  </p>
+  
 </form>
 
 

@@ -6,10 +6,18 @@ h1{
   text-align: center;
 }
 
+.select{
+  width:auto
+}
+
+textarea{
+  width:100%;
+}
+
 .form{
     background-color: pink;
-    width: 400px;
-    max-width: 500px;
+    width: 100%;
+    max-width: 400px;
     height: 100%;
     margin: auto;
     border-radius: 20px;
@@ -26,7 +34,7 @@ textarea{
 input{
   border-radius: 5px;
   border: none;
-  width: auto;
+  width: 100%;
 }
 
 @media (max-width:500px) {
