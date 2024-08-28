@@ -18,7 +18,9 @@ function ContactForm() {
     <input type="tel" name="phone-number" />
   </p>
   <p>
-    <label>Service: <select name="service[]" multiple>
+    <label>Service: 
+    </label>
+    <select name="service[]" multiple>
       <option value="DeepTissueMassage">Deep Tissue Massage</option>
       <option value="FaceMassage">Face Massage</option>
       <option value="ReflexologyMassage">Reflexology Massage</option>
@@ -30,7 +32,6 @@ function ContactForm() {
       <option value="MyofascialReleaseMassage">Myofascial Release Massage</option>
       <option value="ThaiMassage">Thai Massage</option>
     </select>
-    </label>
   </p>
   <p>
     <label>Message: <textarea name="message"></textarea></label>
