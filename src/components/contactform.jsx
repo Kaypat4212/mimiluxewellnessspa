@@ -3,8 +3,7 @@ import './styles/contactform.css';
 
 function ContactForm() {
   return (
-    <div>
-      <h1>Contact Us</h1>
+    <div className='body'>
       <form name="appointmentform" className='form' method="POST" netlify>
   <p>
     <label>Your Name: </label>
