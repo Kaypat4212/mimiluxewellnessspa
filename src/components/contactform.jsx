@@ -5,7 +5,7 @@ function ContactForm() {
   return (
     <div>
       <h1>Contact Us</h1>
-      <form name="appointmentform" method="POST" netlify>
+      <form name="appointmentform" className='form' method="POST" netlify>
   <p>
     <label>Your Name: <input type="text" name="name" /></label>
   </p>
@@ -13,10 +13,14 @@ function ContactForm() {
     <label>Your Email: <input type="email" name="email" /></label>
   </p>
   <p>
-    <label>Your Role: <select name="role[]" multiple>
+    <label>Phone number:<input type="tel" name="phone-number" /></label>
+  </p>
+  <p>
+    <label>Service: <select name="service[]" multiple>
       <option value="leader">Leader</option>
       <option value="follower">Follower</option>
-    </select></label>
+    </select>
+    </label>
   </p>
   <p>
     <label>Message: <textarea name="message"></textarea></label>
