@@ -5,7 +5,7 @@ import Home from './components/home';
 import About from './components/about';
 import Booking from './components/booking';
 import Footer from './components/footer';
-import Thankyou from './components/thankyou';
+// import Thankyou from './components/thankyou';
 import Services from './components/services';
 import './components/styles/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -75,7 +75,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/book" element={<Booking />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/thankyou" element={<Thankyou />} />
+        {/* <Route path="/thankyou" element={<Thankyou />} /> */}
       </Routes>
       <WhatsAppButton /> {/* Include the WhatsAppButton component */}
       <Footer />
