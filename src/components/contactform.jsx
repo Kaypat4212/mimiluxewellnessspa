@@ -8,9 +8,9 @@ function ContactForm() {
         <h1>Contact Us</h1>
         <form name="appointment" method="POST" netlify >
         <input type="hidden" name="form-name" value="appointment"/>
-        <div hidden>
-            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-        </div>
+        {/* <div hidden>
+            <label>Don’t fill this out if youre human: <input name="bot-field" /></label>
+        </div> */}
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required/>
         <br/>
