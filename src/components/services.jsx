@@ -120,7 +120,7 @@ const Services = () => {
         {services.map((service, index) => (
           <Col key={index} md={6} lg={3} className="mb-4">
             <Card className='card'>
-              <Card.Img variant="top" className='cardimg' src={service.imageUrl} alt={service.title} />
+              <Card.Img variant="top" data-aos="flip-up" className='cardimg' src={service.imageUrl} alt={service.title} />
               <Card.Body>
                 <Card.Title>{service.title}</Card.Title>
                 <Card.Text>{service.description}</Card.Text>
