@@ -7,13 +7,16 @@ function ContactForm() {
       <h1>Contact Us</h1>
       <form name="appointmentform" className='form' method="POST" netlify>
   <p>
-    <label>Your Name: <input type="text" name="name" /></label>
+    <label>Your Name: </label>
+    <input type="text" name="name" />
   </p>
   <p>
-    <label>Your Email: <input type="email" name="email" /></label>
+    <label>Your Email: </label>
+    <input type="email" name="email" />
   </p>
   <p>
-    <label>Phone number:<input type="tel" name="phone-number" /></label>
+    <label>Phone number:</label>
+    <input type="tel" name="phone-number" />
   </p>
   <p>
     <label>Service: <select name="service[]" multiple>
