@@ -6,7 +6,7 @@ function ContactForm() {
     return (
       <div>
         <h1>Contact Us</h1>
-        <form name="appointment" method="POST" netlify netlify-honeypot="bot-field">
+        <form name="appointment" method="POST" netlify >
         <input type="hidden" name="form-name" value="appointment"/>
         <div hidden>
             <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
