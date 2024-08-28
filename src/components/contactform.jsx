@@ -9,9 +9,9 @@ function ContactForm() {
         <form
         name="appointment"
         method="POST"
-        data-netlify="true"
+        netlify
         netlify-honeypot="bot-field"
-        onSubmit="handleSubmit(event)"
+        
     >
         {/* <!-- Hidden field for Netlify form handling --> */}
         <input type="hidden" name="form-name" value="appointment" />
