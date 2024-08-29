@@ -39,8 +39,11 @@ function ContactForm() {
           <option value="ThaiMassage">Thai Massage</option>
         </select>
 
+        <br/>
 
-        <label>Message: <textarea name="message"></textarea></label>
+
+        <label>Message: </label>
+        <textarea name="message"></textarea>
         <br />
 
         <button type="submit">Send</button>
