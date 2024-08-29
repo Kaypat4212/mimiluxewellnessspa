@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import AOS from 'aos'
+import { Row, Col, Card } from 'react-bootstrap';
 import '../components/styles/services.css'; // Import specific styles for Services
 // Ensure these paths are correct; adjust based on your project structure
 import deepTissueImg from './images/deeptissue.jpg';
@@ -108,10 +109,13 @@ const services = [
     },
   }
 ];
-
+AOS.init();
 const Services = () => {
   return (
-    <Container className="services-page">
+    <div data-aos="fade-zoom-in"
+     data-aos-easing="ease-in-back"
+     data-aos-delay="300"
+     data-aos-offset="0" className="services-page">
       <h2 className="text-center">Our Services</h2>
       <p className="text-center">
         Discover the range of luxurious treatments we offer at Mimiluxe Wellness Spa.
@@ -119,8 +123,8 @@ const Services = () => {
       <Row>
         {services.map((service, index) => (
           <Col key={index} md={6} lg={3} className="mb-4">
-            <Card className='card'>
-              <Card.Img variant="top" data-aos="flip-up" className='cardimg' src={service.imageUrl} alt={service.title} />
+            <Card  className='card'>
+              <Card.Img variant="top" className='cardimg' src={service.imageUrl} alt={service.title} />
               <Card.Body>
                 <Card.Title>{service.title}</Card.Title>
                 <Card.Text>{service.description}</Card.Text>
@@ -138,7 +142,7 @@ const Services = () => {
       <Link to="/book" className='btnn btn btn-success'>
         Book An Appointment Now
       </Link>
-    </Container>
+    </div>
   );
 };
 
