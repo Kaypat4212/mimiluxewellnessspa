@@ -24,9 +24,9 @@ function ContactForm() {
         <br />
 
         <label>Service:
-        </label>
+        </label> <br/>
         <select className='select' name="service">
-          <option value="Select">Select one</option>
+          <option value="Select">Click to select</option>
           <option value="DeepTissueMassage">Deep Tissue Massage</option>
           <option value="FaceMassage">Face Massage</option>
           <option value="ReflexologyMassage">Reflexology Massage</option>
@@ -42,11 +42,12 @@ function ContactForm() {
         <br/>
 
 
-        <label>Message: </label>
-        <textarea name="message"></textarea>
+        <label>Message: </label> <br/>
+        <textarea name="message" placeholder='Include any special note'></textarea>
+       
         <br />
 
-        <button type="submit">Send</button>
+        <button className='button' type="submit">Book now</button>
 
       </form>
 

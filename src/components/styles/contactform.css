@@ -2,43 +2,64 @@
   height: 100%;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Matemasie&display=swap");
+
+
 h1{
   text-align: center;
 }
 
 .select{
-  width:auto
+  width:auto;
+  margin:20px;
 }
 
-textarea{
-  width:100%;
+label{
+  margin: 9px;
+  font-family: "Matemasie", sans-serif;
 }
+
 
 .form{
     background-color: pink;
-    width: 100%;
-    max-width: 400px;
+    width: 400px;
     height: 100%;
     margin: auto;
+    text-align: center;
     border-radius: 20px;
     padding-top: 90px;
+    margin-bottom: 70px;
     padding-bottom: 90px;
-    margin-bottom: 170px;
+   
 }
 
 textarea{
   border-radius: 5px;
   border: none;
+  width: 300px;
+  max-width: 400px;
+
 }
 
 input{
   border-radius: 5px;
   border: none;
-  width: 100%;
+  width: 300px;
+  margin: auto;
+  padding: 20px;
 }
 
 @media (max-width:500px) {
   .form{
     width: 300px;
+  }
+
+  input{
+    width: 200px;
+    height: 100px;
+  }
+
+  textarea{
+    width: 200px;
   }
 }
