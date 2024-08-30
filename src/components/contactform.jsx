@@ -5,7 +5,13 @@ function ContactForm() {
   return (
     <div className='body'>
 
-      <form name="contact" className='form' method="POST" netlify>
+
+      <form action="/appointmentbooked" name="contact" className='form' method="POST" netlify />
+
+      <form name="contact" className='form' method="POST" data-netlify="true">
+
+        {/* Hidden field to help Netlify process the form */}
+        <input type="hidden" name="form-name" value="contact" />
 
         <label>Your Name: </label> 
         <br />
@@ -23,11 +29,13 @@ function ContactForm() {
 
         <br />
 
-        <label>Service:
-        </label> <br/>
+
+
+        <label>Service:</label> <br/>
         <select className='select' name="service">
           <option value="Select">Click to select</option>
           <option value="DeepTissueMassage">Deep Tissue Massage</option>
+
           <option value="FaceMassage">Face Massage</option>
           <option value="ReflexologyMassage">Reflexology Massage</option>
           <option value="ShiatsuMassage">Shiatsu Massage</option>
