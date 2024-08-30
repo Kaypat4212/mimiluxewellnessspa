@@ -30,7 +30,7 @@ function ContactForm() {
 
 
         <label>Service:</label> <br/>
-        <select className='select' name="service">
+        <select className='select' name="service" required>
           <option value="Select">Click to select</option>
           <option value="DeepTissueMassage">Deep Tissue Massage</option>
 
