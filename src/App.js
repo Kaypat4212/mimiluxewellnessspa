@@ -5,6 +5,7 @@ import Home from './components/home';
 import About from './components/about';
 import Booking from './components/booking';
 import Footer from './components/footer';
+import Appointmentbooked from './components/Appointmentbooked'
 // import Thankyou from './components/thankyou';
 import Services from './components/services';
 import './components/styles/style.css';
@@ -53,7 +54,7 @@ function App() {
           </label>
         </div>
         
-        <div className="collapse navbar-collapse justify-content-lg-end p-5" id="navbarSupportedContent" ref={navbarCollapseRef}>
+        <div data-aos="zoom-in-down" className="collapse navbar-collapse justify-content-lg-end p-5" id="navbarSupportedContent" ref={navbarCollapseRef}>
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
@@ -75,6 +76,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/book" element={<Booking />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/appointmentbooked" element={<Appointmentbooked />} />
         {/* <Route path="/thankyou" element={<Thankyou />} /> */}
       </Routes>
       <WhatsAppButton /> {/* Include the WhatsAppButton component */}

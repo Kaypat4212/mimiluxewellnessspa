@@ -42,7 +42,7 @@ const services = [
     imageUrl: reflexologyImg,
     button: {
       label: "Book Now",
-      url: "https://example.com/book-thai-massage"
+        url: "/book"
     },
   },
   {
@@ -51,7 +51,7 @@ const services = [
     imageUrl: shiatsuImg,
     button: {
       label: "Book Now",
-      url: "https://example.com/book-thai-massage"
+        url: "/book"
     },
   },
   {
@@ -60,7 +60,7 @@ const services = [
     imageUrl: aromatherapyImg,
     button: {
       label: "Book Now",
-      url: "https://example.com/book-thai-massage"
+        url: "/book"
     },
   },
   {
@@ -69,7 +69,7 @@ const services = [
     imageUrl: swedishImg,
     button: {
       label: "Book Now",
-      url: "https://example.com/book-thai-massage"
+       url: "/book"
     },
   },
   {
@@ -78,7 +78,7 @@ const services = [
     imageUrl: nuruImg,
     button: {
       label: "Book Now",
-      url: "https://example.com/book-thai-massage"
+        url: "/book"
     },
   },
   {
@@ -87,7 +87,7 @@ const services = [
     imageUrl: hotStoneImg,
     button: {
       label: "Book Now",
-      url: "https://example.com/book-thai-massage"
+        url: "/book"
     },
   },
   {
@@ -96,7 +96,7 @@ const services = [
     imageUrl: myofascialImg,
     button: {
       label: "Book Now",
-      url: "https://example.com/book-thai-massage"
+      url: "/book"
     },
   },
   {
@@ -105,17 +105,14 @@ const services = [
     imageUrl: thaiImg,
     button: {
       label: "Book Now",
-      url: "/book"
+     url: "/book"
     },
   }
 ];
 AOS.init();
 const Services = () => {
   return (
-    <div data-aos="fade-zoom-in"
-     data-aos-easing="ease-in-back"
-     data-aos-delay="300"
-     data-aos-offset="0" className="services-page">
+    <div className="services-page">
       <h2 className="text-center">Our Services</h2>
       <p className="text-center">
         Discover the range of luxurious treatments we offer at Mimiluxe Wellness Spa.
@@ -123,8 +120,8 @@ const Services = () => {
       <Row>
         {services.map((service, index) => (
           <Col key={index} md={6} lg={3} className="mb-4">
-            <Card  className='card'>
-              <Card.Img variant="top" className='cardimg' src={service.imageUrl} alt={service.title} />
+            <Card  className='cardd'>
+              <Card.Img data-aos="zoom-in-left" variant="top" className='cardimg' src={service.imageUrl} alt={service.title} />
               <Card.Body>
                 <Card.Title>{service.title}</Card.Title>
                 <Card.Text>{service.description}</Card.Text>
@@ -136,12 +133,12 @@ const Services = () => {
               </Card.Body>
             </Card>
           </Col>
+          
         ))}
+        
       </Row>
 
-      <Link to="/book" className='btnn btn btn-success'>
-        Book An Appointment Now
-      </Link>
+    
     </div>
   );
 };

@@ -5,18 +5,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Matemasie&display=swap");
 
 
-h1{
+h2{
   text-align: center;
+  font-family: "Matemasie", sans-serif;
 }
 
 .select{
   width:auto;
   margin:20px;
+  background-color: white;
+  border: none;
+  font-size: 17px;
+  text-align: center;
+  border-radius: 20px;
+  font-family: "Matemasie", sans-serif;
+}
+
+option{
+  font-family: "Matemasie", sans-serif;
 }
 
 label{
   margin: 9px;
   font-family: "Matemasie", sans-serif;
+}
+
+p{
+  font-family: "Titillium Web", sans-serif;
+  font-size: 14px;
 }
 
 
@@ -41,6 +57,8 @@ textarea{
 
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
 input{
   border-radius: 5px;
   border: none;
@@ -52,6 +70,21 @@ input{
 @media (max-width:500px) {
   .form{
     width: 300px;
+  }
+
+  .select{
+    width:200px;
+    margin:20px;
+    background-color: white;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 20px;
+    font-family: "Matemasie", sans-serif;
+  }
+  
+  option{
+    font-family: "Matemasie", sans-serif;
   }
 
   input{
