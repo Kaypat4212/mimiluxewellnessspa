@@ -5,7 +5,7 @@ import Home from './components/home';
 import About from './components/about';
 import Booking from './components/booking';
 import Footer from './components/footer';
-import Appointmentbooked from './components/Appointmentbooked'
+import Appointmentbooked from './components/appointmentbooked'
 // import Thankyou from './components/thankyou';
 import Services from './components/services';
 import './components/styles/style.css';
