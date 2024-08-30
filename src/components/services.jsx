@@ -13,7 +13,7 @@ import nuruImg from '../components/images/NuruMassage.jpg';
 import hotStoneImg from './images/hot-stone-massage.jpg';
 import myofascialImg from './images/myofascial-release-massage.jpg';
 import thaiImg from './images/thai-massage.jpg';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './styles/home.css';
 
 // Define your services with imported image URLs
