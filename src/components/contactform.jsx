@@ -5,7 +5,7 @@ function ContactForm() {
   return (
     <div className='body'>
 
-      <form action="/appointmentbooked" name="contact" className='form' method="POST" netlify>
+      <form name="contact" className='form' method="POST" netlify>
 
         <label>Your Name: </label> 
         <br />
@@ -25,13 +25,13 @@ function ContactForm() {
 
         <label>Service:
         </label> <br/>
-        <select data-aos="zoom-in-down" className='select' name="service">
-          <option data-aos="zoom-in-down"  value="Select">Click to select</option>
-          <option data-aos="zoom-in-up"value="DeepTissueMassage">Deep Tissue Massage</option>
+        <select className='select' name="service">
+          <option value="Select">Click to select</option>
+          <option value="DeepTissueMassage">Deep Tissue Massage</option>
           <option value="FaceMassage">Face Massage</option>
           <option value="ReflexologyMassage">Reflexology Massage</option>
           <option value="ShiatsuMassage">Shiatsu Massage</option>
-          <option value="Aromatherapy Massage">Aromatherapy Massage</option>
+          <option value="AromatherapyMassage">Aromatherapy Massage</option>
           <option value="SwedishMassage">Swedish Massage</option>
           <option value="NuruMassage">Nuru Massage</option>
           <option value="HotstoneMassage">Hot Stone Massage</option>
@@ -41,7 +41,6 @@ function ContactForm() {
 
         <br/>
 
-
         <label>Message: </label> <br/>
         <textarea data-aos="zoom-in-left" name="message" placeholder='Include any special note'></textarea>
        
@@ -50,9 +49,6 @@ function ContactForm() {
         <button data-aos="zoom-in-top" className='button' type="submit">Book now</button>
 
       </form>
-
-
-
     </div>
   );
 }
