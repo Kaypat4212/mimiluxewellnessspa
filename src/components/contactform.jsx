@@ -6,9 +6,7 @@ function ContactForm() {
     <div className='body'>
 
 
-      <form action="/appointmentbooked" name="contact" className='form' method="POST" netlify />
-
-      <form name="contact" className='form' method="POST" data-netlify="true">
+      <form action="/appointmentbooked" name="contact" className='form' method="POST" data-netlify="true">
 
         {/* Hidden field to help Netlify process the form */}
         <input type="hidden" name="form-name" value="contact" />
