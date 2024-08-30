@@ -34,7 +34,7 @@ function ContactForm() {
           <option value="Select">Click to select</option>
           <option value="DeepTissueMassage">Deep Tissue Massage</option>
 
-          <option value="FaceMassage">Face Massage</option>
+          <option name="FaceMassage" value="FaceMassage">Face Massage</option>
           <option value="ReflexologyMassage">Reflexology Massage</option>
           <option value="ShiatsuMassage">Shiatsu Massage</option>
           <option value="AromatherapyMassage">Aromatherapy Massage</option>
