@@ -213,3 +213,7 @@
 .btnnn{
     margin: auto;
 }
+
+.item > img{
+  margin: auto;
+}

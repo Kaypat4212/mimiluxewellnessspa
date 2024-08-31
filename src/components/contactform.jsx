@@ -38,7 +38,10 @@ function ContactForm() {
 
       navigate('/success');
     }
-  }, [state.succeeded, navigate]);
+  },
+  [state.submission, state.succeeded, navigate]
+);
+  
 
   return (
     <form className='form mt-3' onSubmit={handleSubmit}>
@@ -97,12 +100,14 @@ function ContactForm() {
         type="datetime-local"
         name="dateTime" // Ensure this matches the backend field name
         required
-      />
+      /> <br/>
       <ValidationError
         prefix="Date/Time"
         field="dateTime" // Ensure this matches the backend field name
         errors={state.errors}
       />
+
+      <br/>
 
       <label>Service:</label>
       <br />

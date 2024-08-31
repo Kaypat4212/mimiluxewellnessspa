@@ -9,7 +9,7 @@
 //       <p>Please You are expected to make a payment for your appointment</p>
 
 //       <p>Click the button below to make payment </p>
- 
+
 //       <button className='button'>Pay now</button>
 
 //     </div>
