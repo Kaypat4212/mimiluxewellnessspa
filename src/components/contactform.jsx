@@ -40,7 +40,7 @@ function ContactForm() {
   }, [state.succeeded, navigate]);
 
   return (
-    <form className='form mt-3' name='contact' onSubmit={handleSubmit}>
+    <form className='form mt-3' onSubmit={handleSubmit}>
       <label htmlFor="name">Name</label>
       <br />
       <input
