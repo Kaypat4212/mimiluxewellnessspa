@@ -85,8 +85,9 @@ function App() {
         <Route path="/payment" element={<Payment/>} />
         {/* <Route path="/thankyou" element={<Thankyou />} /> */}
       </Routes>
-      <WhatsAppButton /> {/* Include the WhatsAppButton component */}
       <Footer />
+      <WhatsAppButton /> {/* Include the WhatsAppButton component */}
+    
     </Router>
 </HelmetProvider>
   );

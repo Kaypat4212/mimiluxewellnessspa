@@ -25,7 +25,7 @@ import React, { useState } from "react";
 import { PaystackButton } from "react-paystack";
 
 import "./styles/payment.css";
-import img from '../components/images/logo.jpg';
+import logo from '../components/images/logo.jpg';
 
 
 const App = () => {
@@ -76,21 +76,17 @@ const App = () => {
 
         <div className="item">
 
-          <img style={{width: '100px'}} src={img} alt="" />
+          <img className='logo' style={{width: '100px'}} src={logo} alt="" />
+          <h1> Appointment Fee Payment Portal</h1>
 
-          <div className="item-details">
-
-            <p>Dancing Shoes</p>
-
-            <p>{amount}</p>
-
-          </div>
 
         </div>
 
         <div className="checkout-form">
 
           <form>
+
+          <p className='p'>Please fill out the form below with your details and click "Pay Now" to proceed with the payment for your appointment.</p>
 
             <label>Name</label> <br/>
 
@@ -100,7 +96,7 @@ const App = () => {
 
               id="name"
 
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setName(e.target.value)} required
 
             /> <br/>
 
@@ -108,11 +104,11 @@ const App = () => {
 
             <input
 
-              type="text"
+              type="email"
 
               id="email"
 
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)} required
 
             /> <br/>
 
@@ -120,17 +116,20 @@ const App = () => {
 
             <input
 
-              type="text"
+              type="telp"
 
               id="phone"
 
-              onChange={(e) => setPhone(e.target.value)}
+              onChange={(e) => setPhone(e.target.value)} required
 
             /> 
 
+<p className='p'> <h3>Note:</h3> The total fee is $20.</p>
+        
           </form>
 
-          <PaystackButton {...componentProps} />
+          <PaystackButton id="pay" className='btn' {...componentProps} />
+
 
         </div>
 

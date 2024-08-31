@@ -2,9 +2,11 @@
     color: white;
 }
 
-
+.body{
+    height: 100vh;
+}
 .success{
-    height: 80vh;
+    height: 100vh;
     position: relative;
     top: 180px;
 }

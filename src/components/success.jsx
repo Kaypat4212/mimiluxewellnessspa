@@ -18,10 +18,12 @@ function SuccessPage() {
   }, [navigate]);
 
   return (
-    <div className=''>
+    <div className='body'>
       <h1>Appointment Successfully Booked</h1> <br/>
       <p>Thank you for booking an appointment.<br/>
      </p>
+
+     <p>You will be redirected to the payment portal <br/> to complete your appointment booking. </p>
      
     </div>
   );

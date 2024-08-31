@@ -20,41 +20,12 @@
 }
 
 
-.container {
-
-  display: flex;
-
-  flex-direction: row;
-
-  margin: 5% auto;
-
-  width: 635px;
-
-  height: 430px;
-
-  background: white;
-
-  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
-
-}
 
 
 .item {
 
   width: 50%;
-
-  position: relative;
-
-}
-
-
-.item-image {
-
-  height: 430px;
-
-  width: 100%;
-
-  object-fit: cover;
+  margin: auto;
 
 }
 
@@ -96,6 +67,14 @@
 
   text-align: left;
 
+}
+
+h1{
+  color: white;
+}
+
+h2{
+  color: white;
 }
 
 
@@ -181,7 +160,7 @@
 }
 
 
-.paystack-button {
+/* .paystack-button {
 
   cursor: pointer;
 
@@ -193,9 +172,10 @@
 
   text-transform: uppercase;
 
-  background-color: #bfbfbf;
+  background-color: #960696;
 
   font-weight: bold;
+  text-decoration: none;
 
   color: #e0eafc;
 
@@ -209,11 +189,94 @@
 
   margin-top: 40px;
 
+} */
+
+label{
+  color: white;
 }
-.btnnn{
-    margin: auto;
+
+.p{
+  color: black;
+  font-weight: 600;
+  font-size: 17px;
+  padding: 20px;
+}
+
+form{
+
+    background-color: rgb(90, 0, 63);
+    width: 400px;
+    max-width: 450px;
+    height: 100%;
+   margin: auto;
+    text-align: center;
+    border-radius: 20px;
+    padding-top: 90px;
+   
+    margin-bottom: 70px;
+    padding-bottom: 90px;
+   
+
+}
+
+.btn {
+  width: 130px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(15, 15, 15);
+  border: none;
+  color: white;
+  font-weight: 600;
+  gap: 8px;
+  margin: auto;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+  bottom: 160px;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+
+.svgIcon {
+  width: 16px;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.Btn::before {
+  width: calc(100% + 40px);
+  aspect-ratio: 1/1;
+  position: absolute;
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  left: -20px;
+  top: 50%;
+  transform: translate(-150%, -50%);
+  transition-duration: .5s;
+  mix-blend-mode: difference;
+}
+
+.Btn:hover::before {
+  transform: translate(0, -50%);
+}
+
+.Btn:active {
+  transform: translateY(4px);
+  transition-duration: .3s;
 }
 
 .item > img{
   margin: auto;
+}
+
+@media (max-width:500px) {
+  .btn{
+    position: relative;
+    bottom: 130px;
+  }
 }

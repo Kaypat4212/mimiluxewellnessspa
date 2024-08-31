@@ -84,6 +84,8 @@ function ContactForm() {
         type="tel"
         name="phone" // Ensure this matches the backend field name
         placeholder='Eg: +27-103-2345'
+        maxLength="10"
+        min={10}
         required
       />
       <ValidationError
