@@ -24,8 +24,7 @@
   
   .cardd {
     overflow: hidden;
-    border: 12px solid red;
-    background-color: red;
+
 
   }
   
@@ -33,7 +32,7 @@
     width: 200px;
     margin: auto;
     padding: 20px;
-    
+    border-radius: 50px;
     height: 300px; /* Adjust based on your images */
 
  
@@ -41,23 +40,24 @@
 
   .card-body{
     margin: auto;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding: 20px;
   }
   
   .card-title {
-    font-size: 15px;
+    font-size: 18px;
     font-family: "Matemasie", sans-serif;
     color: rgb(0, 0, 0);
     text-align: center;
-    font-weight: 800;
+    font-weight: 400;
   }
   
   .card-text {
     font-size: 10px;
-    text-align: start;
+    text-align: center;
     font-family: 'Georgia', serif; /* Example serif font */
     color: #000000; /* Adjust color based on theme */
   }
@@ -163,3 +163,53 @@
       background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
     }
   }
+
+  .services-page {
+    padding: 20px;
+  }
+  
+  .cardd {
+    border: none;
+  }
+
+  .buttonn{
+    background-color: purple;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-family: "Matemasie", sans-serif;
+  }
+  
+  .cardimg {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .d-flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  .flex-grow-1 {
+    flex-grow: 1;
+  }
+  
+  .price-table {
+    margin-left: 20px;
+    text-align: right;
+    font-family: "Matemasie", sans-serif;
+  }
+  
+  .price-table table {
+    border-collapse: collapse;
+  }
+  
+  .price-table td {
+    padding: 5px;
+    border: 1px solid #ddd;
+  }
+  
+
+  font-family: "Matemasie", sans-serif;
+  

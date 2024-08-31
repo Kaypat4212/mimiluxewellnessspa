@@ -6,13 +6,15 @@ import About from './components/about';
 import Booking from './components/booking';
 import Footer from './components/footer';
 import Appointmentbooked from './components/appointmentbooked'
-// import Thankyou from './components/thankyou';
+// import Successpage from './components/success';
 import Services from './components/services';
 import './components/styles/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import logo from './components/images/logo.jpg';
 import WhatsAppButton from './components/whatsappbutton'; // Import the WhatsAppButton component
+import SuccessPage from './components/success';
+import Payment from './components/payment';
 
 function App() {
   const navbarCollapseRef = useRef(null);
@@ -77,6 +79,8 @@ function App() {
         <Route path="/book" element={<Booking />} />
         <Route path="/services" element={<Services />} />
         <Route path="/appointmentbooked" element={<Appointmentbooked />} />
+        <Route path="/success" element={<SuccessPage />} />
+        <Route path="/payment" element={<Payment/>} />
         {/* <Route path="/thankyou" element={<Thankyou />} /> */}
       </Routes>
       <WhatsAppButton /> {/* Include the WhatsAppButton component */}

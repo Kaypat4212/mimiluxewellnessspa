@@ -1,0 +1,10 @@
+.success > h1{
+    color: white;
+}
+
+
+.success{
+    height: 80vh;
+    position: relative;
+    top: 180px;
+}
