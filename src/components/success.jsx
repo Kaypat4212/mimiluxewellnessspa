@@ -26,7 +26,7 @@ function SuccessPage() {
      <p>You will be redirected to the payment portal <br/> to complete your appointment booking. </p>
      <p> If you are not redirected in 5 secs </p> <br/>
     
-      <a href="/payment"> Click Here  </a>
+      <a className='text-center text-decoration-none' href="/payment"> Click Here  </a>
     </div>
   );
 }
