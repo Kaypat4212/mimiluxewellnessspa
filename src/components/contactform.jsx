@@ -1,30 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { useNavigate } from 'react-router-dom';
 import './styles/contactform.css';
 
 function ContactForm() {
-  const [state, handleSubmit] = useForm('mgvwdbbr');
+  const [state, handleSubmit] = useForm('mgvwdbbr'); // Replace with your Formspree ID
   const navigate = useNavigate();
 
   const getServiceFee = (service) => {
     const fees = {
-      DeepTissueMassage: 50,
+      DeepTissueMassage: 100,
       FaceMassage: 50,
       ReflexologyMassage: 50,
-      ShiatsuMassage: 50,
-      AromatherapyMassage: 50,
-      SwedishMassage: 50,
-      NuruMassage: 50,
-      HotstoneMassage: 50,
-      MyofascialReleaseMassage: 50,
-      ThaiMassage: 50,
+      ShiatsuMassage: 100,
+      AromatherapyMassage: 100,
+      SwedishMassage: 100,
+      NuruMassage: 150,
+      HotstoneMassage: 75, // Example fee
+      MyofascialReleaseMassage: 75, // Example fee
+      ThaiMassage: 75 // Example fee
     };
     return fees[service] || 50; // Default fee
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (state.succeeded) {
+      // Assuming that the Formspree response includes form data
       const formData = new FormData(state.submission);
       const service = formData.get('service');
       const amount = getServiceFee(service);
@@ -72,67 +73,64 @@ function ContactForm() {
         errors={state.errors}
       />
 
-      <label htmlFor="Phone-number">Phone number</label>
+      <label htmlFor="phone">Phone Number</label>
       <br />
       <input
         data-aos="zoom-in-right"
-        id="Phone"
+        id="phone"
         type="tel"
-        name="Phone-number"
+        name="phone" // Ensure this matches the backend field name
         placeholder='Eg: +27-103-2345'
         required
       />
-      <br />
       <ValidationError
-        prefix="Phone number"
-        field="Phone-number"
+        prefix="Phone Number"
+        field="phone" // Ensure this matches the backend field name
         errors={state.errors}
       />
 
-      <label htmlFor="Date/Time">Date/Time</label>
+      <label htmlFor="dateTime">Date/Time</label>
       <br />
       <input
         data-aos="zoom-in-left"
-        id="Date/Time"
+        id="dateTime"
         type="datetime-local"
-        name="Date/Time"
+        name="dateTime" // Ensure this matches the backend field name
         required
       />
-      <br />
       <ValidationError
         prefix="Date/Time"
-        field="Date/Time"
+        field="dateTime" // Ensure this matches the backend field name
         errors={state.errors}
       />
 
       <label>Service:</label>
       <br />
       <select className='select' name="service">
-        <option value="Select">Click to select</option>
-        <option value="DeepTissueMassage">Deep Tissue Massage</option>
-        <option value="FaceMassage">Face Massage</option>
-        <option value="ReflexologyMassage">Reflexology Massage</option>
-        <option value="ShiatsuMassage">Shiatsu Massage</option>
-        <option value="AromatherapyMassage">Aromatherapy Massage</option>
-        <option value="SwedishMassage">Swedish Massage</option>
-        <option value="NuruMassage">Nuru Massage</option>
-        <option value="HotstoneMassage">Hot Stone Massage</option>
-        <option value="MyofascialReleaseMassage">Myofascial Release Massage</option>
-        <option value="ThaiMassage">Thai Massage</option>
+        <option value="">Click to select</option>
+        <option value="DeepTissueMassage">Deep Tissue Massage - $100</option>
+        <option value="FaceMassage">Face Massage - $50</option>
+        <option value="ReflexologyMassage">Reflexology Massage - $50</option>
+        <option value="ShiatsuMassage">Shiatsu Massage - $100</option>
+        <option value="AromatherapyMassage">Aromatherapy Massage - $100</option>
+        <option value="SwedishMassage">Swedish Massage - $100</option>
+        <option value="NuruMassage">Nuru Massage - $150</option>
+        <option value="HotstoneMassage">Hot Stone Massage - $75</option>
+        <option value="MyofascialReleaseMassage">Myofascial Release Massage - $75</option>
+        <option value="ThaiMassage">Thai Massage - $75</option>
       </select>
       <br />
 
-      <label htmlFor="Note">Important Note</label>
+      <label htmlFor="note">Important Note</label>
       <br />
       <textarea
-        id="Note"
-        name="Note"
+        id="note"
+        name="note"
         placeholder='Include any special notes'
       />
-      <br />
       <ValidationError
         prefix="Note"
-        field="Note"
+        field="note" // Ensure this matches the backend field name
         errors={state.errors}
       />
 

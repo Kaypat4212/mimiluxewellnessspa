@@ -1,37 +1,145 @@
-import React, { useEffect } from 'react';
-import './styles/payment.css'
+// import React, { useEffect } from 'react';
+// import './styles/payment.css'
 
-function Payment() {
-  useEffect(() => {
-    const paymentDetails = JSON.parse(sessionStorage.getItem('paymentDetails'));
+// function Payment() {
 
-    if (paymentDetails) {
-      const handler = window.PaystackPop.setup({
-        key: 'pk_live_fccc6c2062787ac03ad7c6c68d2908516b442813', // Replace with your actual public key
-        email: paymentDetails.email,
-        amount: paymentDetails.amount, // Amount in kobo
-        currency: 'NGN', // Adjust if needed
-        callback: function (response) {
-          // Handle successful payment
-          alert('Payment successful! Reference: ' + response.reference);
-          sessionStorage.removeItem('paymentDetails'); // Clear payment details
-        },
-        onClose: function () {
-          // Handle cases where payment is cancelled
-          alert('Transaction was not completed.');
-        }
-      });
+//   return (
+//     <div className='body'>
+//       <h1>Booking Appointment Fee</h1>
+//       <p>Please You are expected to make a payment for your appointment</p>
 
-      handler.openIframe(); // Open Paystack checkout
-    }
-  }, []);
+//       <p>Click the button below to make payment </p>
+ 
+//       <button className='button'>Pay now</button>
+
+//     </div>
+
+//   );
+// }
+
+// export default Payment;
+import './styles/contactform.css'
+
+import React, { useState } from "react";
+
+import { PaystackButton } from "react-paystack";
+
+import "./styles/payment.css";
+import img from '../components/images/logo.jpg';
+
+
+const App = () => {
+
+  const publicKey = "pk_live_fccc6c2062787ac03ad7c6c68d2908516b442813"
+
+  const amount = 1000000
+
+  const [email, setEmail] = useState("")
+
+  const [name, setName] = useState("")
+
+  const [phone, setPhone] = useState("")
+
+
+  const componentProps = {
+
+    email,
+
+    amount,
+
+    metadata: {
+
+      name,
+
+      phone,
+
+    },
+
+    publicKey,
+
+    text: "Pay Now",
+
+    onSuccess: () =>
+
+      alert("Thanks for doing business with us! Come back soon!!"),
+
+    onClose: () => alert("Wait! Don't leave :("),
+
+  }
+
 
   return (
-    <div className='body'>
-      <h1>Processing Payment...</h1>
-      <p>Please wait while we process your payment.</p>
-    </div>
-  );
+
+    <div className="App">
+
+
+
+        <div className="item">
+
+          <img style={{width: '100px'}} src={img} alt="" />
+
+          <div className="item-details">
+
+            <p>Dancing Shoes</p>
+
+            <p>{amount}</p>
+
+          </div>
+
+        </div>
+
+        <div className="checkout-form">
+
+          <form>
+
+            <label>Name</label> <br/>
+
+            <input
+
+              type="text"
+
+              id="name"
+
+              onChange={(e) => setName(e.target.value)}
+
+            /> <br/>
+
+            <label>Email</label> <br/>
+
+            <input
+
+              type="text"
+
+              id="email"
+
+              onChange={(e) => setEmail(e.target.value)}
+
+            /> <br/>
+
+            <label>Phone</label> <br/>
+
+            <input
+
+              type="text"
+
+              id="phone"
+
+              onChange={(e) => setPhone(e.target.value)}
+
+            /> 
+
+          </form>
+
+          <PaystackButton {...componentProps} />
+
+        </div>
+
+      </div>
+
+
+  )
+
 }
 
-export default Payment;
+
+export default App

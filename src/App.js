@@ -15,6 +15,7 @@ import logo from './components/images/logo.jpg';
 import WhatsAppButton from './components/whatsappbutton'; // Import the WhatsAppButton component
 import SuccessPage from './components/success';
 import Payment from './components/payment';
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
   const navbarCollapseRef = useRef(null);
@@ -43,7 +44,8 @@ function App() {
   }, []);
 
   return (
-    <Router>
+<HelmetProvider>
+<Router>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="/"><img className='logo' src={logo} alt="" /></a>
 
@@ -86,6 +88,7 @@ function App() {
       <WhatsAppButton /> {/* Include the WhatsAppButton component */}
       <Footer />
     </Router>
+</HelmetProvider>
   );
 }
 

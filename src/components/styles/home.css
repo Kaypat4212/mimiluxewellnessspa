@@ -37,6 +37,14 @@ p{
   color: white;
   margin-bottom: 100px;
 }
+a{
+  color: white;
+  
+}
+Link{
+  text-decoration: none;
+  color: white;
+}
 
 
 .button {
@@ -54,11 +62,14 @@ p{
   
   .button:active {
     transform: scale(0.96);
+    text-decoration: none;
+    color: white;
   }
   
   .button:before,
   .button:after {
     position: absolute;
+    
     content: "";
     width: 150%;
     left: 50%;

@@ -64,7 +64,7 @@ textarea{
 input{
   border-radius: 5px;
   border: none;
-  width: 300px;
+  width: 500px;
   margin: auto;
   padding: 20px;
 }
@@ -90,8 +90,9 @@ input{
   }
 
   input{
-    width: 200px;
-    height: 100px;
+    width: 270px;
+    height: 80px;
+    margin: 50px;
   }
 
   textarea{
