@@ -76,7 +76,7 @@ function ContactForm() {
         errors={state.errors}
       />
 
-      <label htmlFor="phone">Phone Number</label>
+      <label htmlFor="phone">Phone Numberr</label>
       <br />
       <input
         data-aos="zoom-in-right"
