@@ -1,5 +1,6 @@
 .about-container{
     margin: auto;
+    padding:20px;
 }
 .about-container > h2{
     text-align: center;
