@@ -49,9 +49,6 @@ const About = () => {
         your wellness goals.
       </p>
 
-      <Link to="/book" className='btnn btn btn-success'>
-  Book An Appointment Now
-    </Link>
     </div>
   );
 };
