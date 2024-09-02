@@ -1,6 +1,5 @@
 import React from 'react';
 import '../components/styles/about.css'; // Import the CSS file for styling
-import { Link } from 'react-router-dom';
 import './styles/home.css'
 
 const About = () => {
