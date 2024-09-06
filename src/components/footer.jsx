@@ -34,7 +34,7 @@ const footer = () => {
           href="https://snapchat.com/t/5oM0W4HA" // Replace with your Snapchat username
           target="_blank"
           rel="noopener noreferrer"
-          style={styles.iconLink}
+          
         >
           <i className="fab fa-snapchat-ghost"></i>
         </a>
