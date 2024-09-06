@@ -36,7 +36,7 @@ const footer = () => {
           rel="noopener noreferrer"
           style={styles.iconLink}
         >
-          <i className="fab fa-snapchat-ghost" style={styles.icon}></i>
+          <i className="fab fa-snapchat-ghost"></i>
         </a>
             
           </div>
