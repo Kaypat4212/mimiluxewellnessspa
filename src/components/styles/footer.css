@@ -6,6 +6,10 @@ footer{
     padding-bottom: 30px;
 }
 
+footer > a{
+    text-decoration:none;
+}
+
 footer > h2 {
     /* font-family: 'Courier New', Courier, monospace; */
     font-size: 17px;
