@@ -1,5 +1,12 @@
 .headerr{
     height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.innerheader{
+    position: relative;
+    top: 200px;
 }
 
 .status-message{

@@ -46,12 +46,17 @@ const About = () => {
         Thank you for choosing Mimiluxe Wellness Spa.  <br/>
         
         We look forward to helping you achieve 
-        your wellness goals.
+        your wellness goals. <br />
+
       </p>
 
-      <Link to="/book" className='btnn btn btn-success'>
+
+      <div className="bookapt">
+      <Link to="/book" className='btnnn'>
   Book An Appointment Now
     </Link>
+      </div>
+
     </div>
   );
 };

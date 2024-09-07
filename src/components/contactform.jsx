@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { useNavigate } from 'react-router-dom';
 import './styles/contactform.css';
@@ -6,6 +6,8 @@ import './styles/contactform.css';
 function ContactForm() {
   const [state, handleSubmit] = useForm('mgvwdbbr'); // Replace with your Formspree ID
   const navigate = useNavigate();
+
+  const [isSubmitting, setIsSubmitting] = useState(false); // State to manage submission status
 
   const getServiceFee = (service) => {
     const fees = {
@@ -16,21 +18,25 @@ function ContactForm() {
       AromatherapyMassage: 100,
       SwedishMassage: 100,
       NuruMassage: 150,
-      HotstoneMassage: 75, // Example fee
-      MyofascialReleaseMassage: 75, // Example fee
-      ThaiMassage: 75 // Example fee
+      HotstoneMassage: 75,
+      MyofascialReleaseMassage: 75,
+      ThaiMassage: 75
     };
     return fees[service] || 50; // Default fee
   };
 
   useEffect(() => {
+    if (state.submitting) {
+      setIsSubmitting(true); // Set submitting to true when form is being submitted
+    } else {
+      setIsSubmitting(false); // Set submitting to false when form submission is complete
+    }
+
     if (state.succeeded) {
-      // Assuming that the Formspree response includes form data
       const formData = new FormData(state.submission);
       const service = formData.get('service');
       const amount = getServiceFee(service);
 
-      // Store payment details in session storage
       sessionStorage.setItem('paymentDetails', JSON.stringify({
         amount: amount * 100, // Convert to kobo
         email: formData.get('email'),
@@ -38,10 +44,22 @@ function ContactForm() {
 
       navigate('/success');
     }
-  },
-  [state.submission, state.succeeded, navigate]
-);
-  
+  }, [state.submitting, state.succeeded, state.submission, navigate]);
+
+  const validatePhoneNumber = (value) => {
+    // A simple regex for validating phone numbers (customize as needed)
+    const phoneRegex = /^\+?\d{1,4}?[-.\s]?\(?\d{1,4}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
+    return phoneRegex.test(value);
+  };
+
+  const handlePhoneValidation = (e) => {
+    const value = e.target.value;
+    if (!validatePhoneNumber(value)) {
+      e.target.setCustomValidity('Please enter a valid phone number');
+    } else {
+      e.target.setCustomValidity('');
+    }
+  };
 
   return (
     <form className='form mt-3' onSubmit={handleSubmit}>
@@ -76,21 +94,21 @@ function ContactForm() {
         errors={state.errors}
       />
 
-      <label htmlFor="phone">Phone Numberr</label>
+      <label htmlFor="phone">Phone Number</label>
       <br />
       <input
         data-aos="zoom-in-right"
         id="phone"
         type="tel"
-        name="phone" // Ensure this matches the backend field name
+        name="phone"
         placeholder='Eg: +27-103-2345'
-        maxLength="10"
-        min={10}
+        pattern="^\+?\d{1,4}?[-.\s]?\(?\d{1,4}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$"
+        onBlur={handlePhoneValidation}
         required
       />
       <ValidationError
         prefix="Phone Number"
-        field="phone" // Ensure this matches the backend field name
+        field="phone"
         errors={state.errors}
       />
 
@@ -100,12 +118,12 @@ function ContactForm() {
         data-aos="zoom-in-left"
         id="dateTime"
         type="datetime-local"
-        name="dateTime" // Ensure this matches the backend field name
+        name="dateTime"
         required
-      /> <br/>
+      />
       <ValidationError
         prefix="Date/Time"
-        field="dateTime" // Ensure this matches the backend field name
+        field="dateTime"
         errors={state.errors}
       />
 
@@ -137,12 +155,13 @@ function ContactForm() {
       />
       <ValidationError
         prefix="Note"
-        field="note" // Ensure this matches the backend field name
+        field="note"
         errors={state.errors}
       />
-
+      {isSubmitting && <p className="processing-message">Your appointment booking is being processed. Please wait...</p>}
+            
       <button className='button' type="submit" disabled={state.submitting}>
-        Book Now
+        {state.submitting ? 'Processing...' : 'Book Now'}
       </button>
     </form>
   );
