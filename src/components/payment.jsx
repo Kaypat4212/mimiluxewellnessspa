@@ -17,7 +17,7 @@ const App = () => {
     setIsSubmitting(true);
 
     // Formspree endpoint URL (replace with your form endpoint)
-    const formspreeUrl = 'https://formspree.io/f/YOUR_FORM_ID';
+    const formspreeUrl = 'https://formspree.io/f/xwpezggq';
 
     // Send the form data to Formspree
     fetch(formspreeUrl, {
