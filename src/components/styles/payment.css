@@ -21,7 +21,9 @@
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   padding: 30px;
-  width: 400px;
+  marging:auto;
+  width:100%
+  max-width: 400px;
   text-align: center;
   animation: fadeIn 2s ease-in-out;
 }
