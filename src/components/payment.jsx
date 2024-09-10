@@ -8,16 +8,45 @@ const App = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState("");
 
   // Form submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    // You can add form validation here if needed
-    
-    // After validation, redirect to Paystack payment page
-    // You can pass dynamic data in query params if required
-    window.location.href = 'https://paystack.com/pay/appointmentfee';
+    // Formspree endpoint URL (replace with your form endpoint)
+    const formspreeUrl = 'https://formspree.io/f/YOUR_FORM_ID';
+
+    // Send the form data to Formspree
+    fetch(formspreeUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        phone: phone
+      })
+    })
+    .then((response) => {
+      setIsSubmitting(false);
+      if (response.ok) {
+        setMessage("Form submitted successfully! Redirecting to payment...");
+        // Redirect to Paystack payment page
+        setTimeout(() => {
+          window.location.href = 'https://paystack.com/pay/appointmentfee';
+        }, 2000);
+      } else {
+        setMessage("Form submission failed. Please try again.");
+      }
+    })
+    .catch(() => {
+      setIsSubmitting(false);
+      setMessage("There was an error submitting the form.");
+    });
   };
 
   return (
@@ -64,8 +93,13 @@ const App = () => {
             <h3>Note:</h3> The total fee is $20.
           </p>
 
+          {/* Display the message */}
+          {message && <p>{message}</p>}
+
           {/* Pay Now button to submit the form and trigger payment */}
-          <button type="submit" className="btn btnn">Pay Now</button>
+          <button type="submit" className="btn btnn" disabled={isSubmitting}>
+            {isSubmitting ? "Submitting..." : "Pay Now"}
+          </button>
         </form>
       </div>
     </div>
