@@ -30,7 +30,7 @@ import logo from '../components/images/logo.jpg';
 
 const App = () => {
 
-  const publicKey = "pk_live_fccc6c2062787ac03ad7c6c68d2908516b442813"
+  const publicKey ="pk_live_3ca9ad159d7c3d766589c56c6d910b0aa23ca48b"
 
   const amount = 1000000
 
