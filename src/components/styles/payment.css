@@ -1,5 +1,5 @@
 /* General styling for smooth and elegant feel */
-body {
+.body {
   background: linear-gradient(to right, #f8bcb8, #ffd4d2);
   font-family: 'Poppins', sans-serif;
   color: #555;
