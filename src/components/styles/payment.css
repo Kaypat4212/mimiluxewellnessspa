@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
+  margin: auto;
   animation: backgroundFade 10s infinite alternate;
 }
 
@@ -22,7 +22,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   padding: 30px;
   marging:auto;
-  width:100%
+  width:100%;
   max-width: 400px;
   text-align: center;
   animation: fadeIn 2s ease-in-out;
