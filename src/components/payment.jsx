@@ -1,23 +1,3 @@
-// import React, { useEffect } from 'react';
-// import './styles/payment.css'
-
-// function Payment() {
-
-//   return (
-//     <div className='body'>
-//       <h1>Booking Appointment Fee</h1>
-//       <p>Please You are expected to make a payment for your appointment</p>
-
-//       <p>Click the button below to make payment </p>
-
-//       <button className='button'>Pay now</button>
-
-//     </div>
-
-//   );
-// }
-
-// export default Payment;
 import './styles/contactform.css';
 import React, { useState } from "react";
 import "./styles/payment.css";
