@@ -85,7 +85,7 @@ const App = () => {
           </p>
 
           {/* Pay Now button to submit the form and trigger payment */}
-          <button type="submit" className="btn">Pay Now</button>
+          <button type="submit" className="btn btnn">Pay Now</button>
         </form>
       </div>
     </div>
