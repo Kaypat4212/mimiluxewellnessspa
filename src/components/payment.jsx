@@ -22,50 +22,13 @@ import './styles/contactform.css'
 
 import React, { useState } from "react";
 
-import { PaystackButton } from "react-paystack";
-
 import "./styles/payment.css";
 import logo from '../components/images/logo.jpg';
 
 
 const App = () => {
 
-  const publicKey ="pk_live_3ca9ad159d7c3d766589c56c6d910b0aa23ca48b"
 
-  const amount = 1000000
-
-  const [email, setEmail] = useState("")
-
-  const [name, setName] = useState("")
-
-  const [phone, setPhone] = useState("")
-
-
-  const componentProps = {
-
-    email,
-
-    amount,
-
-    metadata: {
-
-      name,
-
-      phone,
-
-    },
-
-    publicKey,
-
-    text: "Pay Now",
-
-    onSuccess: () =>
-
-      alert("Thanks for doing business with us! Come back soon!!"),
-
-    onClose: () => alert("Wait! Don't leave :("),
-
-  }
 
 
   return (
