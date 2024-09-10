@@ -277,6 +277,6 @@ form{
 @media (max-width:500px) {
   .btn{
     position: relative;
-    bottom: 60px;
+    bottom:  65px;
   }
 }
