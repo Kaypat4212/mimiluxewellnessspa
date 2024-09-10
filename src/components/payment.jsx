@@ -50,6 +50,7 @@ const App = () => {
   };
 
   return (
+    <div className"body">
     <div className="App">
       <div className="item">
         <img className='logo' style={{width: '100px'}} src={logo} alt="Logo" />
@@ -102,6 +103,7 @@ const App = () => {
           </button>
         </form>
       </div>
+    </div>
     </div>
   );
 };
