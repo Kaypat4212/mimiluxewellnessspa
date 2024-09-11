@@ -13,12 +13,12 @@ form{
   }
 
 @keyframes backgroundFade {
-  0% { background: linear-gradient(to right, #f8bcb8, #ffd4d2); }
+  0% { background: linear-gradient(to right, #dd4b9e, #df53b7); }
   100% { background: linear-gradient(to right, #d24fbc, #9b1071); }
 }
 
 .App {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(170, 38, 144, 0.7);
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   margin: auto;
