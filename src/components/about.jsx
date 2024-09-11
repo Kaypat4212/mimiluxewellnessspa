@@ -1,6 +1,5 @@
 import React from 'react';
 import '../components/styles/about.css'; // Import the CSS file for styling
-import { Link } from 'react-router-dom';
 import './styles/home.css'
 
 const About = () => {
@@ -51,12 +50,12 @@ const About = () => {
       </p>
 
 
-      <div className="bookapt">
+
+      {/* <div className="bookapt">
       <Link to="/book" className='btnnn'>
   Book An Appointment Now
     </Link>
-      </div>
-
+      </div> */}
     </div>
   );
 };

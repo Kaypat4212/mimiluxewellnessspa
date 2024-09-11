@@ -1,6 +1,10 @@
 .about-container{
     margin: auto;
+<<<<<<< HEAD
     padding: 50px;
+=======
+    padding:20px;
+>>>>>>> 10db8dbc183c55c7d86ba383f00172a434e6e701
 }
 .about-container > h2{
     text-align: center;

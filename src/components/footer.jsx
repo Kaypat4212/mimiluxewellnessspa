@@ -28,6 +28,18 @@ const footer = () => {
               <Link className="nav-link" to="/book">Book An Appointment</Link> 
           
           </div>
+          <div>
+            
+            <a
+          href="https://snapchat.com/t/5oM0W4HA" // Replace with your Snapchat username
+          target="_blank"
+          rel="noopener noreferrer"
+          
+        >
+          <i className="fab fa-snapchat-ghost"></i>
+        </a>
+            
+          </div>
           <h2>© 2024 Mimiluxe Wellness Spa</h2>
       </footer>
   )

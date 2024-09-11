@@ -52,7 +52,7 @@ function App() {
 
           <div  id="menuToggle" className='p-5'  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <input id="checkbox" className='navbar-toggler' type="checkbox" />
-            <label className="toggle navbar-toggler-icon" htmlFor="checkbox">
+            <label className="toggle" htmlFor="checkbox">
               <div className="bar bar--top"></div>
               <div className="bar bar--middle"></div>
               <div className="bar bar--bottom"></div>
