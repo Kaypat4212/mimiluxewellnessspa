@@ -91,11 +91,12 @@ const App = () => {
           /> 
 
           <p className='p'>
-            <h3>Note:</h3> The total fee is $20.
+            <h2>Note:</h2> The total fee is $20.
+                      {/* Display the message */}
+          {message && <p>{message}</p>}
           </p>
 
-          {/* Display the message */}
-          {message && <p>{message}</p>}
+
 
           {/* Pay Now button to submit the form and trigger payment */}
           <button type="submit" className="btn btnn" disabled={isSubmitting}>
