@@ -2,11 +2,16 @@
     height: 100vh;
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 100px;
 }
 
 .innerheader{
     position: relative;
-    top: 200px;
+    top: 0px;
+}
+
+.innerheader > h2{
+    color: white;
 }
 
 .status-message{
