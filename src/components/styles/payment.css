@@ -3,7 +3,7 @@
   background: linear-gradient(to right, #f8bcb8, #ffd4d2);
   font-family: 'Poppins', sans-serif;
   text-align:center;
-  height: 100vh;
+  height: 80vh;
   margin: auto;
   animation: backgroundFade 10s infinite alternate;
 }
@@ -134,7 +134,8 @@ h1 {
 /* Sweet message text */
 p {
   font-size: 1rem;
-  color: #555;
+  color: #fae7e7;
+  font-weight: 700;
   margin-bottom: 20px;
   opacity: 0;
   animation: fadeInMessage 1.5s forwards;
