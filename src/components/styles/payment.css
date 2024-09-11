@@ -1,156 +1,53 @@
-.body{
-    height: 100vh;
-    position: relative;
-    top: 100px;
-    color: white;
+/* General styling for smooth and elegant feel */
+.body {
+  background: linear-gradient(to right, #f8bcb8, #ffd4d2);
+  font-family: 'Poppins', sans-serif;
+  text-align:center;
+  height: 100vh;
+  margin: auto;
+  animation: backgroundFade 10s infinite alternate;
 }
 
+form{
+  margin:auto;
+  }
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap");
-
+@keyframes backgroundFade {
+  0% { background: linear-gradient(to right, #f8bcb8, #ffd4d2); }
+  100% { background: linear-gradient(to right, #ffd4d2, #f8bcb8); }
+}
 
 .App {
-
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  
+  marging:auto;
+  width:100%;
+  max-width: 400px;
   text-align: center;
-
-  font-family: "Roboto";
-
-  letter-spacing: 0.1rem;
-
+  animation: fadeIn 2s ease-in-out;
 }
 
-
-
-
-.item {
-
-  width: 50%;
-  margin: auto;
-
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-
-.overlay-effect {
-
-  position: absolute;
-
-  top: 0;
-
-  bottom: 0;
-
-  left: 0;
-
-  right: 0;
-
-  opacity: 0.2;
-
-  background-color: #303030;
-
-  overflow: hidden;
-
-  z-index: 1;
-
+/* Logo animation */
+.logo {
+  border-radius: 50%;
+  animation: logoPop 1.5s ease-in-out infinite alternate;
 }
 
-
-.item-details {
-
-  position: absolute;
-
-  bottom: 0;
-
-  margin-bottom: 5px;
-
-  margin-left: 20px;
-
-  color: #84a17d;
-
-  text-align: left;
-
+@keyframes logoPop {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
 }
 
-h1{
-  color: white;
-}
-
-h2{
-  color: white;
-}
-
-
-.item-details__title {
-
-  font-size: 22px;
-
-}
-
-
-.item-details__amount {
-
-  font-weight: bolder;
-
-}
-
-
-.checkout {
-
-  background: #84a17d; /* fallback for old browsers */
-
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  height: 430px;
-
-  width: 50%;
-
-}
-
-
-.checkout-form {
-
-  padding: 20px 20px;
-
-}
-
-
-.checkout-field {
-
-  display: flex;
-
-  flex-direction: column;
-
-  margin-bottom: 20px;
-
-}
-
-
-.checkout-field label {
-
-  text-align: left;
-
-  color: #e0eafc;
-
-  font-size: 10px;
-
-  margin-bottom: 5px;
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.1rem;
-
-}
-
-
-.checkout-field input {
-
-  background-color: transparent;
-
-  border: 1px solid #cecece;
-
+/* Smooth transition for input focus */
+input {
+  border: 2px solid #f8bcb8;
   border-radius: 5px;
 
   color: #e0eafc;
@@ -160,7 +57,7 @@ h2{
 }
 
 
- .paystack-button {
+/* .paystack-button {
 
   cursor: pointer;
 
@@ -189,7 +86,7 @@ h2{
 
   margin-top: 40px;
 
-}
+} */
 
 label{
   color: white;
@@ -197,86 +94,56 @@ label{
 
 .p{
   color: white;
-  font-weight: 600;
-  font-size: 17px;
-  padding: 20px;
-}
-
-form{
-
-    background-color: rgb(90, 0, 63);
-    width: 400px;
-    max-width: 450px;
-    height: 100%;
-   margin: auto;
-    text-align: center;
-    border-radius: 20px;
-    padding-top: 90px;
-   
-    margin-bottom: 70px;
-    padding-bottom: 90px;
-   
-
-}
-
-.btn {
-  width: 130px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(15, 15, 15);
+  padding: 10px 20px;
   border: none;
-  color: white;
-  font-weight: 600;
-  gap: 8px;
-  margin: auto;
+  border-radius: 5px;
   cursor: pointer;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
-  position: relative;
-  bottom: 160px;
-  overflow: hidden;
-  transition-duration: .3s;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  width: 100%;
 }
 
-.svgIcon {
-  width: 16px;
+button:hover {
+  background: #ff9490;
+  box-shadow: 0 0 15px rgba(248, 188, 184, 0.5);
 }
 
-.svgIcon path {
-  fill: white;
+button:disabled {
+  background: #ffd4d2;
+  cursor: not-allowed;
 }
 
-.Btn::before {
-  width: calc(100% + 40px);
-  aspect-ratio: 1/1;
-  position: absolute;
-  content: "";
-  background-color: white;
-  border-radius: 50%;
-  left: -20px;
-  top: 50%;
-  transform: translate(-150%, -50%);
-  transition-duration: .5s;
-  mix-blend-mode: difference;
+button:active {
+  transform: scale(0.98);
 }
 
-.Btn:hover::before {
-  transform: translate(0, -50%);
+h1 {
+  font-size: 1.8rem;
+  color: #ff9490;
+  margin-bottom: 20px;
+  animation: textFadeIn 1.5s ease-in-out;
 }
 
-.Btn:active {
-  transform: translateY(4px);
-  transition-duration: .3s;
+@keyframes textFadeIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-.item > img{
-  margin: auto;
+/* Sweet message text */
+p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInMessage 1.5s forwards;
+  animation-delay: 1.5s;
 }
 
-@media (max-width:500px) {
-  .btn{
-    position: relative;
-    bottom: 130px;
-  }
+@keyframes fadeInMessage {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h3 {
+  color: #ff9490;
 }
