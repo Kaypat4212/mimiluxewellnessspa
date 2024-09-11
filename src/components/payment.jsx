@@ -1,140 +1,110 @@
-// import React, { useEffect } from 'react';
-// import './styles/payment.css'
-
-// function Payment() {
-
-//   return (
-//     <div className='body'>
-//       <h1>Booking Appointment Fee</h1>
-//       <p>Please You are expected to make a payment for your appointment</p>
-
-//       <p>Click the button below to make payment </p>
-
-//       <button className='button'>Pay now</button>
-
-//     </div>
-
-//   );
-// }
-
-// export default Payment;
-import './styles/contactform.css'
-
+import './styles/contactform.css';
 import React, { useState } from "react";
-
-import { PaystackButton } from "react-paystack";
-
 import "./styles/payment.css";
 import logo from '../components/images/logo.jpg';
 
 const App = () => {
+  // Define state hooks to store form input values
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState("");
 
-  const publicKey = "pk_live_fccc6c2062787ac03ad7c6c68d2908516b442813"
+  // Form submit handler
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  const amount = 1000000
+    // Formspree endpoint URL (replace with your form endpoint)
+    const formspreeUrl = 'https://formspree.io/f/xwpezggq';
 
-  const [email, setEmail] = useState("")
-
-  const [name, setName] = useState("")
-
-  const [phone, setPhone] = useState("")
-
-
-  const componentProps = {
-
-    email,
-
-    amount,
-
-    metadata: {
-
-      name,
-
-      phone,
-
-    },
-
-    publicKey,
-
-    text: "Pay Now",
-
-    onSuccess: () =>
-
-      alert("Thanks for doing business with us! Come back soon!!"),
-
-    onClose: () => alert("Wait! Don't leave :("),
-
-  }
-
+    // Send the form data to Formspree
+    fetch(formspreeUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        phone: phone
+      })
+    })
+    .then((response) => {
+      setIsSubmitting(false);
+      if (response.ok) {
+        setMessage("Form submitted successfully! Redirecting to payment...");
+        // Redirect to Paystack payment page
+        setTimeout(() => {
+          window.location.href = 'https://paystack.com/pay/appointmentfee';
+        }, 2000);
+      } else {
+        setMessage("Form submission failed. Please try again.");
+      }
+    })
+    .catch(() => {
+      setIsSubmitting(false);
+      setMessage("There was an error submitting the form.");
+    });
+  };
 
   return (
-
+    
     <div className="App">
+      <div className="item">
+        <img className='logo' style={{width: '100px'}} src={logo} alt="Logo" />
+        <h1>Appointment Fee Payment Portal</h1>
+      </div>
 
+      <div className="checkout-form">
+        <form onSubmit={handleSubmit}>
+          <p className='p'>
+            Please fill out the form below with your details and click "Pay Now" to proceed with the payment for your appointment.
+          </p>
 
+          <label>Name</label> <br/>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)} 
+            required
+          /> <br/>
 
-        <div className="item">
+          <label>Email</label> <br/>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)} 
+            required
+          /> <br/>
 
-          <img className='logo' style={{width: '100px'}} src={logo} alt="" />
-          <h1> Appointment Fee Payment Portal</h1>
+          <label>Phone</label> <br/>
+          <input
+            type="tel"
+            id="phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)} 
+            required
+          /> 
 
+          <p className='p'>
+            <h3>Note:</h3> The total fee is $20.
+          </p>
 
-        </div>
+          {/* Display the message */}
+          {message && <p>{message}</p>}
 
-        <div className="checkout-form">
-
-          <form>
-
-          <p className='p'>Please fill out the form below with your details and click "Pay Now" to proceed with the payment for your appointment.</p>
-
-            <label>Name</label> <br/>
-
-            <input
-
-              type="text"
-
-              id="name"
-
-              onChange={(e) => setName(e.target.value)} required
-
-            /> <br/>
-
-            <label>Email</label> <br/>
-
-            <input
-
-              type="email"
-
-              id="email"
-
-              onChange={(e) => setEmail(e.target.value)} required
-
-            /> <br/>
-
-            <label>Phone</label> <br/>
-
-            <input
-
-              type="telp"
-
-              id="phone"
-
-              onChange={(e) => setPhone(e.target.value)} required
-
-            /> 
-
-<p className='p'> <h3>Note:</h3> The total fee is $20.</p>
-        
-          </form>
-
-          <PaystackButton id="pay" className='btn' {...componentProps} />
-
-
-        </div>
-
+          {/* Pay Now button to submit the form and trigger payment */}
+          <button type="submit" className="btn btnn" disabled={isSubmitting}>
+            {isSubmitting ? "Submitting..." : "Pay Now"}
+          </button>
+        </form>
       </div>
     </div>
   );
 };
 
-export default App
+export default App;

@@ -21,8 +21,7 @@ form{
   background: rgba(255, 255, 255, 0.7);
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  
-  marging:auto;
+  margin: auto;
   width:100%;
   max-width: 400px;
   text-align: center;
@@ -54,6 +53,9 @@ input {
 
   height: 35px;
 
+}
+button{
+  width: 300px;
 }
 
 
