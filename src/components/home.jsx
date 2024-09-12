@@ -20,7 +20,7 @@ const Home = () => {
         <p>Experience Luxury and Relaxation</p>
 
         <Link to="/book" className="button l">
-          Book An Appointment
+          Book An Appointment Online
         </Link>
 
       

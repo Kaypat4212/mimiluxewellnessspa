@@ -76,126 +76,127 @@ function ContactForm() {
 
   return (
     <div>
-          <button
+
+      <form className='form mt-3' onSubmit={handleSubmit}>
+
+
+        <label htmlFor="name">Name</label>
+        <br />
+        <input
+          data-aos="zoom-in-down"
+          id="name"
+          type="text"
+          name="name"
+          placeholder='EG: John Doe'
+          required
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+        />
+        <ValidationError
+          prefix="Name"
+          field="name"
+          errors={state.errors}
+        />
+
+        <label htmlFor="email">Email Address</label>
+        <br />
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder='Eg: JohnDoe@email.com'
+          required
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        />
+        <ValidationError
+          prefix="Email"
+          field="email"
+          errors={state.errors}
+        />
+
+        <label htmlFor="phone">Phone Number</label>
+        <br />
+        <input
+          data-aos="zoom-in-right"
+          id="phone"
+          type="tel"
+          name="phone"
+          placeholder='Eg: +27-103-2345'
+          pattern="^\+?\d{1,4}?[-.\s]?\(?\d{1,4}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$"
+          onBlur={handlePhoneValidation}
+          required
+          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+        />
+        <ValidationError
+          prefix="Phone Number"
+          field="phone"
+          errors={state.errors}
+        />
+
+        <label htmlFor="dateTime">Date/Time</label>
+        <br />
+        <input
+          data-aos="zoom-in-left"
+          id="dateTime"
+          type="datetime-local"
+          name="dateTime"
+          required
+        />
+        <ValidationError
+          prefix="Date/Time"
+          field="dateTime"
+          errors={state.errors}
+        />
+
+        <br />
+
+        <label>Service:</label>
+        <br />
+        <select
+          className='select'
+          name="service"
+          onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+        >
+          <option value="">Click to select</option>
+          <option value="DeepTissueMassage">Deep Tissue Massage - $100</option>
+          <option value="FaceMassage">Face Massage - $50</option>
+          <option value="ReflexologyMassage">Reflexology Massage - $50</option>
+          <option value="ShiatsuMassage">Shiatsu Massage - $100</option>
+          <option value="AromatherapyMassage">Aromatherapy Massage - $100</option>
+          <option value="SwedishMassage">Swedish Massage - $100</option>
+          <option value="NuruMassage">Nuru Massage - $150</option>
+          <option value="HotstoneMassage">Hot Stone Massage - $75</option>
+          <option value="MyofascialReleaseMassage">Myofascial Release Massage - $75</option>
+          <option value="ThaiMassage">Thai Massage - $75</option>
+        </select>
+        <br />
+
+        <label htmlFor="note">Important Note</label>
+        <br />
+        <textarea
+          id="note"
+          name="note"
+          placeholder='Include any special notes'
+        />
+        <ValidationError
+          prefix="Note"
+          field="note"
+          errors={state.errors}
+        />
+
+            {/* Book Appointment on WhatsApp button */}
+            <button
         type="button"
         className="btn-whatsapp"
         onClick={handleWhatsAppClick}
       >
         Book Appointment on WhatsApp
       </button>
-      <form className='form mt-3' onSubmit={handleSubmit}>
-    {/* Book Appointment on WhatsApp button */}
+        {isSubmitting && <p className="processing-message">Your appointment booking is being processed. <br /> Please wait...</p>}
 
-      <label htmlFor="name">Name</label>
-      <br />
-      <input
-        data-aos="zoom-in-down"
-        id="name"
-        type="text"
-        name="name"
-        placeholder='EG: John Doe'
-        required
-        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-      />
-      <ValidationError
-        prefix="Name"
-        field="name"
-        errors={state.errors}
-      />
-
-      <label htmlFor="email">Email Address</label>
-      <br />
-      <input
-        id="email"
-        type="email"
-        name="email"
-        placeholder='Eg: JohnDoe@email.com'
-        required
-        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-      />
-      <ValidationError
-        prefix="Email"
-        field="email"
-        errors={state.errors}
-      />
-
-      <label htmlFor="phone">Phone Number</label>
-      <br />
-      <input
-        data-aos="zoom-in-right"
-        id="phone"
-        type="tel"
-        name="phone"
-        placeholder='Eg: +27-103-2345'
-        pattern="^\+?\d{1,4}?[-.\s]?\(?\d{1,4}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$"
-        onBlur={handlePhoneValidation}
-        required
-        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-      />
-      <ValidationError
-        prefix="Phone Number"
-        field="phone"
-        errors={state.errors}
-      />
-
-      <label htmlFor="dateTime">Date/Time</label>
-      <br />
-      <input
-        data-aos="zoom-in-left"
-        id="dateTime"
-        type="datetime-local"
-        name="dateTime"
-        required
-      />
-      <ValidationError
-        prefix="Date/Time"
-        field="dateTime"
-        errors={state.errors}
-      />
-
-      <br/>
-
-      <label>Service:</label>
-      <br />
-      <select
-        className='select'
-        name="service"
-        onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-      >
-        <option value="">Click to select</option>
-        <option value="DeepTissueMassage">Deep Tissue Massage - $100</option>
-        <option value="FaceMassage">Face Massage - $50</option>
-        <option value="ReflexologyMassage">Reflexology Massage - $50</option>
-        <option value="ShiatsuMassage">Shiatsu Massage - $100</option>
-        <option value="AromatherapyMassage">Aromatherapy Massage - $100</option>
-        <option value="SwedishMassage">Swedish Massage - $100</option>
-        <option value="NuruMassage">Nuru Massage - $150</option>
-        <option value="HotstoneMassage">Hot Stone Massage - $75</option>
-        <option value="MyofascialReleaseMassage">Myofascial Release Massage - $75</option>
-        <option value="ThaiMassage">Thai Massage - $75</option>
-      </select>
-      <br />
-
-      <label htmlFor="note">Important Note</label>
-      <br />
-      <textarea
-        id="note"
-        name="note"
-        placeholder='Include any special notes'
-      />
-      <ValidationError
-        prefix="Note"
-        field="note"
-        errors={state.errors}
-      />
-      {isSubmitting && <p className="processing-message">Your appointment booking is being processed. Please wait...</p>}
-            
-      <button className='button' type="submit" disabled={state.submitting}>
-        {state.submitting ? 'Processing...' : 'Book Now'}
-      </button>
-
-      
-    </form>
+        <button className='buttonn' type="submit" disabled={state.submitting}>
+          {state.submitting ? 'Processing...' : 'Book Now'}
+        </button>
+      </form>
     </div>
 
   );
