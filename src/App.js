@@ -20,18 +20,24 @@ function App() {
   const navbarCollapseRef = useRef(null);
 
   const handleNavLinkClick = useCallback(() => {
+    // Collapse the navbar if it's open
     if (navbarCollapseRef.current.classList.contains('show')) {
-      // Use Bootstrap's Collapse API to hide the navbar
       const collapse = new window.bootstrap.Collapse(navbarCollapseRef.current, {
-        toggle: false // Do not toggle, only hide
+        toggle: false, // Do not toggle, only hide
       });
       collapse.hide();
+    }
+
+    // Reset the checkbox to unchecked (menu should close)
+    const checkbox = document.getElementById('checkbox');
+    if (checkbox) {
+      checkbox.checked = false;
     }
   }, []);
 
   useEffect(() => {
     const navbarLinks = document.querySelectorAll('.nav-link');
-    
+
     navbarLinks.forEach(link => {
       link.addEventListener('click', handleNavLinkClick);
     });
