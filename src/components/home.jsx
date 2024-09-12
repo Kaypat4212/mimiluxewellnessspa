@@ -1,25 +1,42 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
-import './styles/home.css'
+import './styles/home.css';
 
-const home = () => {
+const Home = () => {
+  // Function to generate WhatsApp link
+  const generateWhatsAppLink = () => {
+    const phoneNumber = 'YOUR_PHONE_NUMBER'; // Replace with your WhatsApp phone number
+    const text = 'Hello! I would like to book an appointment at Mimiluxe Wellness Spa.';
+    return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+  };
 
-    return (
-        <header className="hero">
-            <div className="hero-overlay">
-                <h1>Welcome to Mimiluxe Wellness Spa</h1>
+  return (
+    <header className="hero">
+      <div className="hero-overlay">
+        <h1>Welcome to Mimiluxe Wellness Spa</h1>
+      </div>
 
-            </div>
+      <div className='text-center'>
+        <p>Experience Luxury and Relaxation</p>
 
-            <div className='text-center'>
-                <p>Experience Luxury and Relaxation</p>
-                
-                <Link to="/book" className="button l">
-  Book An Appointment
-    </Link>
-            </div>
-        </header>
-    )
+        <Link to="/book" className="button l">
+          Book An Appointment
+        </Link>
+
+      
+      </div>
+
+      <div className="textcenter">
+          {/* WhatsApp Booking Button */}
+          <button
+          className="buttonn mt-4 whatsapp-buttonn"
+          onClick={() => window.open(generateWhatsAppLink(), '_blank')}
+        >
+          Book Appointment on WhatsApp
+        </button>
+      </div>
+    </header>
+  );
 }
 
-export default home
+export default Home;

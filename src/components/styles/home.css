@@ -3,6 +3,7 @@ header {
 }
 
 
+
 @import url("https://fonts.googleapis.com/css2?family=Matemasie&display=swap");
 
 .hero-overlay h1 {
@@ -12,6 +13,29 @@ header {
   color: rgb(192, 0, 134);
   font-size: 30px;
   margin-top: 100px;
+}
+
+.buttonnn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+
+
+.whatsapp-buttonn {
+  background-color: #25D366; /* WhatsApp green color */
+  margin-top: 10px;
+}
+
+.whatsapp-buttonn:hover {
+  background-color: #128C7E; /* Darker green color on hover */
 }
 
 body {
@@ -41,9 +65,29 @@ a{
   color: white;
   
 }
+
+a:hover{
+  text-decoration: none;
+  color: white;
+
+}
+
+a:active{
+  text-decoration: none;
+  color: white;
+}
 Link{
   text-decoration: none;
   color: white;
+}
+
+.buttonn{
+  margin: auto;
+  position: relative;
+  top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

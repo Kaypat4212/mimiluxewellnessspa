@@ -4,7 +4,21 @@
     justify-content: space-evenly;
     margin-bottom: 100px;
 }
-
+.btn-whatsapp {
+    background-color: #25D366; /* WhatsApp green color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .btn-whatsapp:hover {
+    background-color: #128C7E; /* Darker green color on hover */
+  }
+  
 .innerheader{
     position: relative;
     top: 0px;

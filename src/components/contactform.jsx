@@ -6,8 +6,14 @@ import './styles/contactform.css';
 function ContactForm() {
   const [state, handleSubmit] = useForm('mgvwdbbr'); // Replace with your Formspree ID
   const navigate = useNavigate();
-
   const [isSubmitting, setIsSubmitting] = useState(false); // State to manage submission status
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+  });
 
   const getServiceFee = (service) => {
     const fees = {
@@ -33,18 +39,15 @@ function ContactForm() {
     }
 
     if (state.succeeded) {
-      const formData = new FormData(state.submission);
-      const service = formData.get('service');
-      const amount = getServiceFee(service);
-
+      const amount = getServiceFee(formData.service);
       sessionStorage.setItem('paymentDetails', JSON.stringify({
         amount: amount * 100, // Convert to kobo
-        email: formData.get('email'),
+        email: formData.email,
       }));
 
       navigate('/success');
     }
-  }, [state.submitting, state.succeeded, state.submission, navigate]);
+  }, [state.submitting, state.succeeded, navigate, formData]);
 
   const validatePhoneNumber = (value) => {
     // A simple regex for validating phone numbers (customize as needed)
@@ -61,8 +64,28 @@ function ContactForm() {
     }
   };
 
+  const generateWhatsAppLink = () => {
+    const phoneNumber = '+27796249287'; // Replace with your WhatsApp phone number
+    const text = `*New Appointment Request*\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}`;
+    return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+  };
+
+  const handleWhatsAppClick = () => {
+    window.open(generateWhatsAppLink(), '_blank');
+  };
+
   return (
-    <form className='form mt-3' onSubmit={handleSubmit}>
+    <div>
+          <button
+        type="button"
+        className="btn-whatsapp"
+        onClick={handleWhatsAppClick}
+      >
+        Book Appointment on WhatsApp
+      </button>
+      <form className='form mt-3' onSubmit={handleSubmit}>
+    {/* Book Appointment on WhatsApp button */}
+
       <label htmlFor="name">Name</label>
       <br />
       <input
@@ -72,6 +95,7 @@ function ContactForm() {
         name="name"
         placeholder='EG: John Doe'
         required
+        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
       />
       <ValidationError
         prefix="Name"
@@ -87,6 +111,7 @@ function ContactForm() {
         name="email"
         placeholder='Eg: JohnDoe@email.com'
         required
+        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
       />
       <ValidationError
         prefix="Email"
@@ -105,6 +130,7 @@ function ContactForm() {
         pattern="^\+?\d{1,4}?[-.\s]?\(?\d{1,4}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$"
         onBlur={handlePhoneValidation}
         required
+        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
       />
       <ValidationError
         prefix="Phone Number"
@@ -131,7 +157,11 @@ function ContactForm() {
 
       <label>Service:</label>
       <br />
-      <select className='select' name="service">
+      <select
+        className='select'
+        name="service"
+        onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+      >
         <option value="">Click to select</option>
         <option value="DeepTissueMassage">Deep Tissue Massage - $100</option>
         <option value="FaceMassage">Face Massage - $50</option>
@@ -163,7 +193,11 @@ function ContactForm() {
       <button className='button' type="submit" disabled={state.submitting}>
         {state.submitting ? 'Processing...' : 'Book Now'}
       </button>
+
+      
     </form>
+    </div>
+
   );
 }
 

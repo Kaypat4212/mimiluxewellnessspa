@@ -11,6 +11,13 @@ const App = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
 
+  // Function to generate WhatsApp link with form data
+  const generateWhatsAppLink = () => {
+    const phoneNumber = 'YOUR_PHONE_NUMBER'; // Replace with your WhatsApp phone number
+    const text = `*New Appointment Request*\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`;
+    return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+  };
+
   // Form submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,7 +57,6 @@ const App = () => {
   };
 
   return (
-    
     <div className="App">
       <div className="item">
         <img className='logo' style={{width: '100px'}} src={logo} alt="Logo" />
@@ -92,15 +98,22 @@ const App = () => {
 
           <p className='p'>
             <h2>Note:</h2> The total fee is $20.
-                      {/* Display the message */}
-          {message && <p>{message}</p>}
+            {/* Display the message */}
+            {message && <p>{message}</p>}
           </p>
-
-
 
           {/* Pay Now button to submit the form and trigger payment */}
           <button type="submit" className="btn btnn" disabled={isSubmitting}>
             {isSubmitting ? "Submitting..." : "Pay Now"}
+          </button>
+
+          {/* Book Appointment on WhatsApp button */}
+          <button
+            type="button"
+            className="btn btn-whatsapp"
+            onClick={() => window.open(generateWhatsAppLink(), '_blank')}
+          >
+            Book Appointment on WhatsApp
           </button>
         </form>
       </div>
