@@ -40,7 +40,9 @@ const footer = () => {
         </a>
             
           </div>
-          <h2>© 2024 Mimiluxe Wellness Spa</h2>
+         <h2 >© 2024 Mimiluxe Wellness Spa</h2>
+         <small>Built & Developed by <a className='text-decoration-none text-white' href="https://www.kaypat.dev">Kaypat.dev</a></small>
+ 
       </footer>
   )
 }

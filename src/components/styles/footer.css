@@ -10,8 +10,12 @@ footer > a{
     text-decoration:none;
     color:white;
 }
+small{
+    color: white;
+}
 
 footer > h2 {
+    color: white;
     /* font-family: 'Courier New', Courier, monospace; */
     font-size: 17px;
 }
