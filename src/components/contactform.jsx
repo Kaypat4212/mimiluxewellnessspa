@@ -167,6 +167,10 @@ function ContactForm() {
           <option value="HotstoneMassage">Hot Stone Massage - $75</option>
           <option value="MyofascialReleaseMassage">Myofascial Release Massage - $75</option>
           <option value="ThaiMassage">Thai Massage - $75</option>
+          <option value="Birthdaymassagepackage">Birthday massage package - $150</option>
+          <option value="Birthdaymassagepackage">Couples massage package - $250</option>
+          <option value="Seasidemassagepackage ">Sea side massage package - $150</option>
+          <option value="Seasidemassagepackage ">Beach side massage package - $150</option>
         </select>
         <br />
 
