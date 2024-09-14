@@ -103,14 +103,14 @@ const App = () => {
           </p>
 
           {/* Pay Now button to submit the form and trigger payment */}
-          <button type="submit" className="btn btnn" disabled={isSubmitting}>
+          <button type="submit" className="" disabled={isSubmitting}>
             {isSubmitting ? "Submitting..." : "Pay Now"}
           </button>
 
           {/* Book Appointment on WhatsApp button */}
           <button
             type="button"
-            className="btn btn-whatsapp"
+            className=""
             onClick={() => window.open(generateWhatsAppLink(), '_blank')}
           >
             Book Appointment on WhatsApp
