@@ -103,7 +103,7 @@ const App = () => {
           </p>
 
           {/* Pay Now button to submit the form and trigger payment */}
-          <button type="submit" className="" disabled={isSubmitting}>
+          <button type="submit" className="btnn" disabled={isSubmitting}>
             {isSubmitting ? "Submitting..." : "Pay Now"}
           </button>
 
