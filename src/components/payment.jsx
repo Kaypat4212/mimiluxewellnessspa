@@ -14,7 +14,7 @@ const App = () => {
   // Function to generate WhatsApp link with form data
   const generateWhatsAppLink = () => {
     const phoneNumber = '+27796249287'; // Replace with your WhatsApp phone number
-    const text = `*New Appointment Request*\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`;
+    const text = `*Hello i want to make payment and finalize my booking*\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`;
     return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
   };
 
