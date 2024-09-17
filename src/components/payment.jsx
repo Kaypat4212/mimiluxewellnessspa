@@ -13,7 +13,7 @@ const App = () => {
 
   // Function to generate WhatsApp link with form data
   const generateWhatsAppLink = () => {
-    const phoneNumber = 'YOUR_PHONE_NUMBER'; // Replace with your WhatsApp phone number
+    const phoneNumber = '+27796249287'; // Replace with your WhatsApp phone number
     const text = `*New Appointment Request*\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`;
     return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
   };
@@ -41,7 +41,7 @@ const App = () => {
     .then((response) => {
       setIsSubmitting(false);
       if (response.ok) {
-        setMessage("Form submitted successfully! Redirecting to payment...");
+        setMessage("Payment information Submitted successfully! Redirecting to payment...");
         // Redirect to Paystack payment page
         setTimeout(() => {
           window.location.href = 'https://paystack.com/pay/appointmentfee';
@@ -104,16 +104,16 @@ const App = () => {
 
           {/* Pay Now button to submit the form and trigger payment */}
           <button type="submit" className="btnn" disabled={isSubmitting}>
-            {isSubmitting ? "Submitting..." : "Pay Now"}
+            {isSubmitting ? "Processing" : "Pay Now"}
           </button>
 
           {/* Book Appointment on WhatsApp button */}
           <button
             type="button"
-            className=""
+            className="btnn"
             onClick={() => window.open(generateWhatsAppLink(), '_blank')}
           >
-            Book Appointment on WhatsApp
+           Make payment via WhatsApp
           </button>
         </form>
       </div>

@@ -189,6 +189,10 @@ function ContactForm() {
 
 
             {/* Book Appointment on WhatsApp button */}
+
+            <button className='buttonnn' type="submit" disabled={state.submitting}>
+          {state.submitting ? 'Processing...' : 'Book Now'}
+        </button> <br />
             <button
         type="button"
         className="btn-whatsapp"
@@ -197,9 +201,7 @@ function ContactForm() {
         Book Appointment on WhatsApp
       </button>
         {isSubmitting && <p className="processing-message">Your appointment booking is being processed. <br /> Please wait...</p>}
-<button className='buttonn' type="submit" disabled={state.submitting}>
-          {state.submitting ? 'Processing...' : 'Book Now'}
-        </button>
+
 
 
       </form>
