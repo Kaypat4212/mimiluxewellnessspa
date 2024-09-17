@@ -4,11 +4,11 @@ import './styles/home.css';
 
 const Home = () => {
   // Function to generate WhatsApp link
-  const generateWhatsAppLink = () => {
-    const phoneNumber = 'YOUR_PHONE_NUMBER'; // Replace with your WhatsApp phone number
-    const text = 'Hello! I would like to book an appointment at Mimiluxe Wellness Spa.';
-    return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-  };
+  // const generateWhatsAppLink = () => {
+  //   const phoneNumber = 'YOUR_PHONE_NUMBER'; // Replace with your WhatsApp phone number
+  //   const text = 'Hello! I would like to book an appointment at Mimiluxe Wellness Spa.';
+  //   return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+  // };
 
   return (
     <header className="hero">
@@ -24,16 +24,16 @@ const Home = () => {
         </Link>
 
       
-      </div>
-
-      <div className="textcenter">
+      </div> <br />
           {/* WhatsApp Booking Button */}
-          <button
-          className="buttonn mt-4 whatsapp-buttonn"
+      <div className="textcenter">
+
+          {/* <button
+          className="buttonnn mt-4 whatsapp-buttonn"
           onClick={() => window.open(generateWhatsAppLink(), '_blank')}
         >
           Book Appointment on WhatsApp
-        </button>
+        </button> */}
       </div>
     </header>
   );

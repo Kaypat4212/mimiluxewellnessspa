@@ -10,7 +10,18 @@ footer > a{
     text-decoration:none;
     color:white;
 }
+
+.mauto{
+    display: flex;
+    justify-content: center;
+   align-content: space-evenly;
+}
 small{
+    color: white;
+    opacity: 30%;
+}
+
+i{
     color: white;
 }
 

@@ -30,7 +30,8 @@ const footer = () => {
           </div>
           <div>
             
-            <a
+<div className=" mauto">
+<a
           href="https://snapchat.com/t/5oM0W4HA" // Replace with your Snapchat username
           target="_blank"
           rel="noopener noreferrer"
@@ -38,6 +39,19 @@ const footer = () => {
         >
           <i className="fab fa-snapchat-ghost"></i>
         </a>
+
+
+        <br/>
+
+            <a
+          href="https://instagram.com/mimiluxe_wellness-therapistsa" // Replace with your Snapchat username
+          target="_blank"
+          rel="noopener noreferrer"
+          
+        >
+<i class="fa-brands fa-instagram"></i>
+        </a>
+</div>
             
           </div>
          <h2 >© 2024 Mimiluxe Wellness Spa</h2>
