@@ -44,7 +44,7 @@ const footer = () => {
         <br/>
 
             <a
-          href="https://instagram.com/mimiluxe_wellness-therapistsa" // Replace with your Snapchat username
+          href="https://www.instagram.com/mimiluxe_wellness_theraptistsa?igsh=Y3o2YWt2cTNsbDJ3" // Replace with your Snapchat username
           target="_blank"
           rel="noopener noreferrer"
           
