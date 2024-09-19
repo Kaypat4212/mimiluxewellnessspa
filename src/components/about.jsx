@@ -11,7 +11,7 @@ const About = () => {
         At Mimiluxe, we specialize in a diverse range of massage therapies designed to 
         provide relief, relaxation, and revitalization for both body and mind.
       </p>
-      <p>
+      <p data-aos="fade-left">
         Our spa is dedicated to offering an exceptional experience through our variety 
         of massage services, including Swedish, deep tissue, hot stone, aromatherapy, 
         and more. 
