@@ -19,7 +19,7 @@ const About = () => {
        <br /> Each treatment is tailored to meet the individual needs of our clients, 
         ensuring a personalized experience that addresses your specific wellness goals.
       </p>
-      <h3>Our Expertise</h3>
+      <h3 data-aos="fade-left">Our Expertise</h3>
       <p>
         With years of experience in the wellness industry, our team of highly skilled 
         and certified massage therapists is committed to providing top-notch service 
