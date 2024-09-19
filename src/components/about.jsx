@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className="about-container">
       <h2>About Mimiluxe Wellness Spa</h2>
-      <p>
+      <p data-aos="fade-left">
         Welcome to <strong>Mimiluxe Wellness Spa</strong>, where relaxation meets rejuvenation. 
         At Mimiluxe, we specialize in a diverse range of massage therapies designed to 
         provide relief, relaxation, and revitalization for both body and mind.
