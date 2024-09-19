@@ -34,14 +34,14 @@ const About = () => {
         designed to soothe and comfort. Our serene and elegant spa ambiance complements 
         our expert therapies, creating a holistic experience that promotes overall well-being.
       </p>
-      <p>
+      <p data-aos="fade-down">
         Whether you are seeking relief from stress, recovering from physical strain, or simply 
         indulging in a moment of tranquility, Mimiluxe Wellness Spa is here to cater to 
         your needs with excellence and care. <br />
          We invite you to experience the ultimate in 
         relaxation and wellness with us.
       </p>
-      <p>
+      <p data-aos="fade-left">
         Thank you for choosing Mimiluxe Wellness Spa.  <br/>
         
         We look forward to helping you achieve 
