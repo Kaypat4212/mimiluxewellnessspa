@@ -29,7 +29,7 @@ const About = () => {
         <br /> This dedication to 
         professional growth ensures that you receive the highest standard of care.
       </p>
-      <p>
+      <p data-aos="fade-left">
         At Mimiluxe Wellness Spa, we believe that true relaxation begins with an environment 
         designed to soothe and comfort. Our serene and elegant spa ambiance complements 
         our expert therapies, creating a holistic experience that promotes overall well-being.
